@@ -22,9 +22,11 @@ const Container = styled.div`
     ${common}
 
     @media (max-width: 500px) {
-        padding: 16px 0px;
+        padding: 16px 16px;
         border-bottom: none;
     }
+
+
 `
 
 const Wrapper = styled.div`
@@ -156,13 +158,46 @@ Wrapper.ButtonWrapper = styled.div`
 `
 
 const DrawerBar = styled(Drawer)`
-    /* ${common} */
-    /* background: red;
+    ${common}
     height: 100vh;
-    position: relative; */
+    position: fixed;
+    top: 0;
+    left: 0;
 
     @media (min-width: 501px) {
-        /* display: none; */
+        display: none;
+    }
+
+    .ant-drawer-content-wrapper{
+        width: 100% !important;
+    }
+
+    .ant-drawer-body {
+        ${common}
+        flex-direction: column;
+    }
+
+    .ant-drawer-header-title {
+        ${common}
+        justify-content: flex-end;
+    }
+
+    .ant-drawer-header {
+        border-bottom: none;
+    }
+
+    .ant-drawer-title {
+        display: none;
+    }
+
+    .link {
+        list-style-type: none;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #3D3D3D;
     }
 `
 

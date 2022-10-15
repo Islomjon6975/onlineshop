@@ -17,11 +17,10 @@ export const Navbar = () => {
   return (
     <Container>
         <Wrapper>
-        <DrawerBar title="Basic Drawer" placement="right" onClose={onClose} open={open}>
-            <DrawerBar.Close onClick={onClose} />
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
+        <DrawerBar placement="right" onClose={onClose} open={open}>
+            {/* <DrawerBar.Close onClick={onClose} /> */}
+            <p className='link'>Home</p>
+            <p className='link'>Shop</p>
         </DrawerBar>
             <Wrapper.Wrap>
                 <Wrapper.Left>
@@ -44,7 +43,7 @@ export const Navbar = () => {
                     </Wrapper.BasketWrapper>
                     
                     <Wrapper.ButtonWrapper>
-                        <Button class='login' type="primary" icon={<Logout />}>
+                        <Button type="primary" width='100px' icon={<Logout />}>
                             Login
                         </Button>
                     </Wrapper.ButtonWrapper>
