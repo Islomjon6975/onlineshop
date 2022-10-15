@@ -1,0 +1,175 @@
+import styled, {css} from "styled-components";
+import {ReactComponent as logo} from '../../assets/icons/logo.svg'
+import {ReactComponent as greenshop} from '../../assets/icons/greenshop.svg'
+import {ReactComponent as search} from '../../assets/icons/search.svg'
+import {ReactComponent as basket} from '../../assets/icons/basket.svg'
+import {ReactComponent as hamburger} from '../../assets/icons/hamburger-menu.svg'
+import {ReactComponent as logout} from '../../assets/icons/logout.svg'
+import {ReactComponent as close} from '../../assets/icons/close.svg'
+import { Drawer } from "antd";
+
+const common = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+const Container = styled.div`
+    max-width: 1920px;
+    width: 100%;
+    padding: 17px 0px;
+    border-bottom: 0.3px solid rgba(70, 163, 88, 0.5);
+    ${common}
+
+    @media (max-width: 500px) {
+        padding: 16px 0px;
+        border-bottom: none;
+    }
+`
+
+const Wrapper = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+`
+
+const Logo = styled(logo)`
+    @media (max-width: 600px) {
+        width: 30px;
+        height: 30px;
+    }
+`
+const Greenshop = styled(greenshop)`
+    @media (max-width: 600px) {
+        width: 98px;
+        height: 11px;
+    }
+`
+const Search = styled(search)`
+    transition: transform .3s ease-in-out;
+    :active {
+        transform: scale(0.97);
+    }
+`
+
+Wrapper.BasketWrapper = styled.div`
+    position: relative;
+`
+
+Wrapper.Counter = styled.div`
+    ${common}
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    right: -5px;
+    top: -3px;
+    background: #46A358;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: #FFFFFF;
+`
+
+const Basket = styled(basket)`
+    transition: transform .3s ease-in-out;
+    :active {
+        transform: scale(0.97);
+    }
+`
+const Hamburger = styled(hamburger)`
+    transition: transform .3s ease-in-out;
+    :active {
+        transform: scale(0.97);
+    }
+    display: none;
+    @media (max-width: 500px) {
+        display: block;
+    }
+`
+const Logout = styled(logout)``
+
+Wrapper.Wrap = styled.div`
+    ${common}
+`
+
+Wrapper.Left = styled.div`
+    ${common}
+    justify-content: flex-start;
+    width: 100%;
+    gap: 5.6px;
+
+    @media (max-width: 500px) {
+        gap: 5px;
+
+    }
+`
+
+Wrapper.Right = styled.div`
+    ${common}
+    justify-content: flex-end;
+    width: 100%;
+    gap: 30px;
+
+    @media (max-width: 1000px) {
+        gap: 24px;
+    }
+
+    @media (max-width: 600px) {
+        gap: 20px;
+    }
+
+    @media (max-width: 500px) {
+        gap: 24px;
+    }
+`
+
+Wrapper.Ul = styled.ul`
+    ${common}
+    gap: 50px;
+
+    @media (max-width: 1000px) {
+        gap: 24px;
+    }
+
+    @media (max-width: 500px) {
+        display: none;
+    }
+`
+
+Wrapper.Li = styled.li`
+    list-style-type: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3D3D3D;
+`
+
+Wrapper.ButtonWrapper = styled.div`
+    @media (max-width: 500px) {
+        display: none;
+    }
+`
+
+const DrawerBar = styled(Drawer)`
+    /* ${common} */
+    /* background: red;
+    height: 100vh;
+    position: relative; */
+
+    @media (min-width: 501px) {
+        /* display: none; */
+    }
+`
+
+DrawerBar.Close = styled(close)`
+    position: absolute;
+    top: 30px;
+    right: 30px;
+`
+
+export {Container, Wrapper, Logo, Greenshop, Search, Basket, Hamburger, Logout, DrawerBar}
