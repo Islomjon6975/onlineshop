@@ -28,17 +28,6 @@ p .p {
     font-size: 14px;
     line-height: 24px;
     color: #727272;
+    margin-bottom: 0px !important;
 }
 
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-  margin-bottom: 0 !important;
-  font-weight: 500;
-}
