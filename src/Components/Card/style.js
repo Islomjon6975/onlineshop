@@ -2,7 +2,8 @@ import styled from "styled-components";
 import {ReactComponent as basket} from '../../assets/icons/basket.svg'
 import {ReactComponent as heart} from '../../assets/icons/heart.svg'
 import {ReactComponent as search} from '../../assets/icons/search.svg'
-import {ReactComponent as settings} from '../../assets/icons/settings.svg'
+import {ReactComponent as redHeart} from '../../assets/icons/red-heart.svg'
+
 
 const Container = styled.div`
     max-width: 350px;
@@ -100,6 +101,7 @@ Container.Icons.Wrapper = styled.div`
 Container.Icons.Basket = styled(basket)``
 Container.Icons.Heart = styled(heart)``
 Container.Icons.Search = styled(search)``
+Container.Icons.RedHeart = styled(redHeart)``
 
 Container.Title = styled.div`
     font-style: normal;

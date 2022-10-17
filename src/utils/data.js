@@ -1,3 +1,84 @@
+import flower1 from '../assets/images/flower1.png'
+import flower2 from '../assets/images/flower2.png'
+import flower3 from '../assets/images/flower3.png'
+import flower4 from '../assets/images/flower4.png'
+import flower5 from '../assets/images/flower5.png'
+import flower6 from '../assets/images/flower6.png'
+import flower7 from '../assets/images/flower7.png'
+
+export const data = [
+    {
+        id: 1,
+        title: 'Barberton Daisy',
+        img: flower1,
+        price: 119,
+        salePrice: null,
+        discount: 13,
+        like: false,
+        quantity: 1,
+    },
+    {
+        id: 2,
+        title: 'Barberton Daisy',
+        img: flower2,
+        price: 169,
+        salePrice: null,
+        discount: 13,
+        like: false,
+        quantity: 1,
+    },
+    {
+        id: 3,
+        title: 'Barberton Daisy',
+        img: flower3,
+        price: 199,
+        salePrice: null,
+        discount: 0,
+        like: false,
+        quantity: 1,
+    },
+    {
+        id: 4,
+        title: 'Barberton Daisy',
+        img: flower4,
+        price: 129,
+        salePrice: null,
+        discount: 0,
+        like: false,
+        quantity: 1,
+    },
+    {
+        id: 5,
+        title: 'Barberton Daisy',
+        img: flower5,
+        price: 119,
+        salePrice: null,
+        discount: 10,
+        like: false,
+        quantity: 1,
+    },
+    {
+        id: 6,
+        title: 'Barberton Daisy',
+        img: flower6,
+        price: 139,
+        salePrice: null,
+        discount: 0,
+        like: false,
+        quantity: 1,
+    },
+    {
+        id: 7,
+        title: 'Barberton Daisy',
+        img: flower7,
+        price: 119,
+        salePrice: null,
+        discount: 0,
+        like: false,
+        quantity: 1,
+    }
+]
+
 export const categories = [
     {
         id: 1,

@@ -5,9 +5,9 @@ import { Container } from './style'
 
 export const Root = () => {
   return (
-    <Container>
-        <Navbar />
-        <Home />
-    </Container>
+      <Container>
+          <Navbar />
+          <Home />
+      </Container>
   )
 }
