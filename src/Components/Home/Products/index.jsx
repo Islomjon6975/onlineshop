@@ -56,7 +56,7 @@ export const Products = () => {
                 </Main.Navbar.Items>
                 <Main.Navbar.Sort>
                   Short By:
-                  <Main.Navbar.Select>
+                  <Main.Navbar.Select defaultValue={'Default sorting'} onChange={(e) => dispatch({type: 'select', payload: {value: e.target.value}})}>
                     <Main.Navbar.Option value='Default sorting'>Default Sorting</Main.Navbar.Option>
                     <Main.Navbar.Option value='Most Expensive'>Most Expensive</Main.Navbar.Option>
                     <Main.Navbar.Option value='Cheapest'>Cheapest</Main.Navbar.Option>

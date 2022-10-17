@@ -22,6 +22,20 @@ export const reducer = (state, action) => {
                     }
                 } );
                 return {...state, data: redheart, favourites: [...removeFavouriteOne]}
-            default: return state.data
+            case 'select':
+                if(action.payload.value === 'Most Expensive') {
+                    const sortBypriceCart = state.data.sort((itemA, itemB) => itemB?.price - itemA?.price) // sort descending by price
+                    const expensiveOrder = sortBypriceCart;
+                    return {...state, data: expensiveOrder}
+                } else if (action.payload.value === 'Cheapest') {
+                    const sortBypriceCart = state.data.sort((itemA, itemB) => itemA?.price - itemB?.price) // sort descending by price
+                    const cheapOrder = sortBypriceCart;
+                    return {...state, data: cheapOrder}
+                }  else if (action.payload.value === 'Default sorting') {
+                    let sortByDefault = state.data.sort((itemA, itemB) => itemA?.id - itemB?.id) // sort by default
+                    return {...state, data: sortByDefault}
+                }
+    
+            default: return {...state, data: state.data}
         }
 }

@@ -15,7 +15,6 @@ export const Card = ({
 }) => {
     const [change, setChange] = useState(false)
     const [state, dispatch] = useProducts()
-    console.log(state, 'state')
   return (
     <Container  onMouseOver = {() => setChange(true)} onMouseLeave = {() => setChange(false)}>
         <Container.ImageWrapper>
