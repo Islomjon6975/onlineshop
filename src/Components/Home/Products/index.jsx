@@ -62,6 +62,7 @@ export const Products = () => {
                     <Main.Navbar.Option value='Cheapest'>Cheapest</Main.Navbar.Option>
                   </Main.Navbar.Select>
                 </Main.Navbar.Sort>
+              <Main.Settings />
               </Main.Navbar>
               <Main.Products>
                 <Card />

@@ -1,21 +1,39 @@
 import styled from "styled-components";
 import { Slider } from 'antd';
+import {ReactComponent as settings} from '../../../assets/icons/settings.svg'
 
 const Container = styled.div`
     max-width: 1920px;
     width: 100%;
     margin-top: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
 const Wrapper = styled.div`
+    width: 100%;
     display: grid;
     grid-template-columns: 312px 1fr;
     grid-column-gap: 50px;
+
+    @media (max-width: 1240px) {
+        grid-column-gap: 30px;
+
+    }
+
+    @media (max-width: 910px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 const Sidebar = styled.div`
     width: 312px;
     height: 774px;
+
+    @media (max-width: 910px) {
+        display: none;
+    }
 `
 
 Sidebar.Wrapper = styled.div`
@@ -114,6 +132,15 @@ const Main = styled.div`
 
 `
 
+Main.Settings = styled(settings)`
+    display: none;
+
+
+    @media (max-width: 910px) {
+        display: block;
+    }
+`
+
 Main.Navbar = styled.div`
     display: flex;
     align-items: center;
@@ -143,6 +170,10 @@ Main.Navbar.Sort = styled.div`
     font-size: 15px;
     line-height: 16px;
     color: #3D3D3D;
+
+    @media (max-width: 910px) {
+        display: none;
+    }
 `
 
 Main.Navbar.Select = styled.select`
@@ -171,6 +202,37 @@ Main.Products = styled.div`
 
     @media (max-width: 1520px) {
         grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 40px;
+        grid-column-gap: 23px;
+    }
+
+    @media (max-width: 1250px) {
+        grid-row-gap: 40px;
+        grid-column-gap: 20px;
+    }
+
+    @media (max-width: 1240px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 30px;
+        grid-column-gap: 20px;
+    }
+
+    @media (max-width: 910px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 30px;
+        grid-column-gap: 20px;
+    }
+
+    @media (max-width: 785px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 30px;
+        grid-column-gap: 20px;
+    }
+
+    @media (max-width: 530px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 30px;
+        grid-column-gap: 20px;
     }
 
     /* @media (max-width: 1600px) {

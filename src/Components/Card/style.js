@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {ReactComponent as basket} from '../../assets/icons/basket.svg'
 import {ReactComponent as heart} from '../../assets/icons/heart.svg'
 import {ReactComponent as search} from '../../assets/icons/search.svg'
+import {ReactComponent as settings} from '../../assets/icons/settings.svg'
 
 const Container = styled.div`
     max-width: 350px;
@@ -10,6 +11,18 @@ const Container = styled.div`
 
     :hover{
         border-top: 2px solid #46A358;
+    }
+
+
+    @media (max-width: 900px) {
+        max-width: 300px;
+        min-width: 238px;
+    }
+
+    @media (max-width: 600px) {
+        max-width: 161px;
+        min-width: 161px;
+
     }
 `
 
@@ -21,10 +34,29 @@ Container.ImageWrapper = styled.div`
     justify-content: center;
     align-items: center;
     background: #FBFBFB;
+
+    @media (max-width: 900px) {
+        height: 250px;
+    }
+
+    @media (max-width: 600px) {
+        background: linear-gradient(143.28deg, #F4F4F4 -12%, #FAFAFA 106.59%);
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid #999;
+    }
 `
 
 Container.ImageWrapper.Image = styled.img`
-    
+    @media (max-width: 900px) {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (max-width: 600px) {
+        width: 132px;
+        height: 132px;
+    }
 `
 
 Container.Off = styled.div`
