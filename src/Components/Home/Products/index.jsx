@@ -4,6 +4,7 @@ import { Container, Main, Sidebar, Wrapper } from './style'
 import superSale from '../../../assets/images/super-sale.png'
 import { Card } from '../../Card'
 import { useProducts } from '../../../context/Products'
+import { Pagination } from 'antd'
 
 export const Products = () => {
   const [change, setChange] = useState({min: 0, max: 1500, categories: 'House Plants', size: 'Small', navlink: 'All Plants'})
@@ -28,8 +29,8 @@ export const Products = () => {
                 </Sidebar.Items>
                 <Sidebar.Title>Price Range</Sidebar.Title>
                 <Sidebar.Items>
-                  <Sidebar.Slider max={1500} onChange={(e) => setChange({min: e[0], max: e[1]})} range defaultValue={[0, 1500]}  />
-                  <Sidebar.Price>Price: <span>${change.min} - ${change.max}</span> </Sidebar.Price>
+                  <Sidebar.Slider max={500} onChange={(e) => dispatch({type: 'slider', payload: {min: e[0], max: e[1]}})} range defaultValue={[0, 500]}  />
+                  <Sidebar.Price>Price: <span>${state.min}.00 - ${state.max}.00</span> </Sidebar.Price>
                 </Sidebar.Items>
                 <Sidebar.Title>Size</Sidebar.Title>
                 <Sidebar.Items>
@@ -85,6 +86,9 @@ export const Products = () => {
                 
                 
               </Main.Products>
+              <Main.Panginate>
+                <Pagination  defaultCurrent={1} total={40} />
+              </Main.Panginate>
             </Main>
         </Wrapper>
     </Container>

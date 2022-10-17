@@ -1,3 +1,5 @@
+import { data } from "../../utils/data";
+
 export const reducer = (state, action) => {
         switch(action.type) {
             case 'heart': 
@@ -11,6 +13,7 @@ export const reducer = (state, action) => {
                     }
                 } );
                 return {...state, data: heart, favourites: [...state.favourites, favouritesOne]}
+
             case 'redHeart': 
                 let removeFavouriteOne = null
                 let redheart = state.data.map(value => {
@@ -22,6 +25,7 @@ export const reducer = (state, action) => {
                     }
                 } );
                 return {...state, data: redheart, favourites: [...removeFavouriteOne]}
+
             case 'select':
                 if(action.payload.value === 'Most Expensive') {
                     const sortBypriceCart = state.data.sort((itemA, itemB) => itemB?.price - itemA?.price) // sort descending by price
@@ -35,7 +39,29 @@ export const reducer = (state, action) => {
                     let sortByDefault = state.data.sort((itemA, itemB) => itemA?.id - itemB?.id) // sort by default
                     return {...state, data: sortByDefault}
                 }
+                return {...state}
+                
+            case 'openCart': 
+                return {...state, basket: !state.basket}
     
+            case 'closeCart':
+                return {...state, basket: false}
+
+            case 'slider':
+                let sortByRange = data.filter((value) => (state.max > value.price && state.min < value.price) && value)
+                return {...state, data: sortByRange, min: action.payload.min, max: action.payload.max}
+            
+            case 'basket':
+                let selectedCart = null
+                let res = state.data.map((value) => {
+                    if(value.id === action.payload.id) {
+                        selectedCart = {...value, addtocart: true}
+                        return {...value, addtocart: true}
+                    } else {
+                        return value
+                    }
+                })
+                return {...state, data: res, cart: [...state.cart, selectedCart]}
             default: return {...state, data: state.data}
         }
 }

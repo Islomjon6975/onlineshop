@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Slider } from 'antd';
+import { Menu, Slider } from 'antd';
 import {ReactComponent as settings} from '../../../assets/icons/settings.svg'
 
 const Container = styled.div`
@@ -29,7 +29,6 @@ const Wrapper = styled.div`
 
 const Sidebar = styled.div`
     width: 312px;
-    height: 774px;
 
     @media (max-width: 910px) {
         display: none;
@@ -250,6 +249,29 @@ Main.Products = styled.div`
         grid-row-gap: 40px;
         grid-column-gap: 20px;
     } */
+`
+
+Main.Panginate = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 90px;
+
+    .ant-pagination-item-active a {
+        color: #fff;
+        background: #46A358;
+    }
+
+    .ant-pagination-disabled, .ant-pagination-disabled:hover {
+        cursor: not-allowed;
+        display: none;
+    }
+
+    .ant-pagination-item:hover {
+        border-color: none;
+        transition: all .3s;
+    }
 `
 
 export {Container, Wrapper, Sidebar, Main}

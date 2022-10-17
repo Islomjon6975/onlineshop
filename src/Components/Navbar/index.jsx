@@ -1,9 +1,13 @@
+import { Drawer } from 'antd';
 import React, { useState } from 'react'
+import { usePlugins } from '../../context/Plugins';
+import { useProducts } from '../../context/Products';
+import { Cart } from '../Cart';
 import { Button } from '../Generic/Button'
 import { Basket, Container, Greenshop, Logo, Logout, Search, Wrapper, Hamburger, DrawerBar } from './style'
 
 export const Navbar = () => {
-
+    const [state, dispatch] = useProducts()
     const [open, setOpen] = useState(false);
 
     const showDrawer = () => {
@@ -38,8 +42,8 @@ export const Navbar = () => {
                 <Wrapper.Right>
                     <Search />
                     <Wrapper.BasketWrapper>
-                        <Basket />
-                        <Wrapper.Counter>0</Wrapper.Counter>
+                        <Basket onClick={() => dispatch({type: 'openCart'})} />
+                        <Wrapper.Counter>{state?.cart?.length}</Wrapper.Counter>
                     </Wrapper.BasketWrapper>
                     
                     <Wrapper.ButtonWrapper>
@@ -47,10 +51,11 @@ export const Navbar = () => {
                             Login
                         </Button>
                     </Wrapper.ButtonWrapper>
-                    <Hamburger onClick={showDrawer} />
+                    <Hamburger  />
                 </Wrapper.Right>
             </Wrapper.Wrap>
         </Wrapper>
+        <Cart />
     </Container>
   )
 }

@@ -16,6 +16,7 @@ export const data = [
         discount: 13,
         like: false,
         quantity: 1,
+        addtocart:false,
     },
     {
         id: 2,
@@ -26,6 +27,7 @@ export const data = [
         discount: 13,
         like: false,
         quantity: 1,
+        addtocart:false,
     },
     {
         id: 3,
@@ -36,6 +38,7 @@ export const data = [
         discount: 0,
         like: false,
         quantity: 1,
+        addtocart:false,
     },
     {
         id: 4,
@@ -46,6 +49,7 @@ export const data = [
         discount: 0,
         like: false,
         quantity: 1,
+        addtocart:false,
     },
     {
         id: 5,
@@ -56,6 +60,7 @@ export const data = [
         discount: 10,
         like: false,
         quantity: 1,
+        addtocart:false,
     },
     {
         id: 6,
@@ -66,6 +71,7 @@ export const data = [
         discount: 0,
         like: false,
         quantity: 1,
+        addtocart:false,
     },
     {
         id: 7,
@@ -76,6 +82,7 @@ export const data = [
         discount: 0,
         like: false,
         quantity: 1,
+        addtocart:false,
     }
 ]
 

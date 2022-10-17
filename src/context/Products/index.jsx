@@ -6,7 +6,8 @@ const Context = createContext();
 export const useProducts = () => useContext(Context)
 
 const ProductsContext = ({children}) => {
-    const [state, dispatch] = useReducer(reducer, {data: data, favourites: []})
+    const [state, dispatch] = useReducer(reducer, {data: data, favourites: [], min: 0, max: 500, cart: []})
+    console.log(state,'sssssss')
     return(
         <Context.Provider value={[state, dispatch]}>
             {children}

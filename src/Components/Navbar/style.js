@@ -61,10 +61,10 @@ Wrapper.BasketWrapper = styled.div`
 Wrapper.Counter = styled.div`
     ${common}
     position: absolute;
-    width: 17px;
-    height: 17px;
-    right: -5px;
-    top: -3px;
+    width: 21px;
+    height: 21px;
+    right: -8px;
+    top: -5px;
     background: #46A358;
     border: 2px solid #FFFFFF;
     border-radius: 50%;
