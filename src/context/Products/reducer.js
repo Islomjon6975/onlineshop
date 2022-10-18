@@ -103,6 +103,17 @@ export const reducer = (state, action) => {
 
                 return {...state, cart: decrement}
 
+            case 'openModal':
+                return {...state, modal: true}
+
+            case 'closeModal':
+                return {...state, modal: false}
+            case 'openHumburger':
+                return {...state, humburger: true}
+
+            case 'closeHumburger':
+                return {...state, humburger: false}
+
             default: return {...state, data: state.data}
         }
 }

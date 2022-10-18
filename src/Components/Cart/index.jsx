@@ -5,10 +5,9 @@ import { useProducts } from '../../context/Products';
 import { Button } from '../Generic/Button';
 
 export const Cart = () => {
-    // const [plugin, setPlugin] = usePlugins();
-    const [state, dispatch] = useProducts();
+  const [state, dispatch] = useProducts();
   return (
-    <Container title="Products" width={500} placement="right" onClose={() => dispatch({type: 'closeCart'})} open={state.basket}>
+    <Container title="Products" width={ window.matchMedia("(max-width: 500px)").matches ? '100%' : 500} placement="right" onClose={() => dispatch({type: 'closeCart'})} open={state.basket}>
         <Wrapper>
           <Products>
               { state?.cart?.length > 0 ? (

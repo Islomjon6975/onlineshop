@@ -14,12 +14,41 @@ const Container = styled.div`
 const Wrapper = styled.div`
     width: 100%;
     display: grid;
-    grid-template-columns: 312px 1fr;
+    grid-template-columns: 400px 1fr;
     grid-column-gap: 50px;
+
+    @media (max-width: 1630px) {
+        grid-column-gap: 35px;
+        grid-template-columns: 330px 1fr;
+    }
+
+    @media (max-width: 1520px) {
+        grid-column-gap: 30px;
+        grid-template-columns: 360px 1fr;
+    }
+
+    @media (max-width: 1265px) {
+        grid-column-gap: 30px;
+        grid-template-columns: 312px 1fr;
+    }
+
 
     @media (max-width: 1240px) {
         grid-column-gap: 30px;
+    }
 
+    @media (max-width: 1200px) {
+        grid-column-gap: 20px;
+    }
+
+    @media (max-width: 1175px) {
+        grid-template-columns: 370px 1fr;
+        grid-column-gap: 40px;
+    }
+
+    @media (max-width: 1000px) {
+        grid-template-columns: 320px 1fr;
+        grid-column-gap: 20px;
     }
 
     @media (max-width: 910px) {
@@ -28,7 +57,7 @@ const Wrapper = styled.div`
 `
 
 const Sidebar = styled.div`
-    width: 312px;
+    /* width: 312px; */
 
     @media (max-width: 910px) {
         display: none;
@@ -37,7 +66,7 @@ const Sidebar = styled.div`
 
 Sidebar.Wrapper = styled.div`
     background: #FBFBFB;
-    padding: 14px 18px;
+    padding: 18px 18px;
 `
 
 Sidebar.Title = styled.div`
@@ -124,11 +153,10 @@ Sidebar.Price = styled.div`
 `
 
 Sidebar.SuperSale = styled.img`
-
+    width: 100%;
 `
 
 const Main = styled.div`
-
 `
 
 Main.Settings = styled(settings)`
@@ -144,12 +172,18 @@ Main.Navbar = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 50px;
+    @media (max-width: 430px) {
+        padding: 0 16px;
+    }
 `
 
 Main.Navbar.Items = styled.ul`
     display: flex;
     align-items: center;
     gap: 34px;
+    height: 100%;    
+
 `
 
 Main.Navbar.Item = styled.li`
@@ -160,7 +194,7 @@ Main.Navbar.Item = styled.li`
     color: ${({color}) => color};
     list-style-type: none;
     border-bottom: ${({border}) => border};
-    padding-bottom: 7px;
+    /* padding-bottom: 7px; */
 `
 
 Main.Navbar.Sort = styled.div`
@@ -211,12 +245,57 @@ Main.Products = styled.div`
     }
 
     @media (max-width: 1240px) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-row-gap: 30px;
         grid-column-gap: 20px;
     }
 
+    @media (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 20px;
+        grid-column-gap: 15px;
+    }
+
+    @media (max-width: 1175px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 40px;
+    }
+
+    @media (max-width: 1000px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 20px;
+    }
+
     @media (max-width: 910px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 20px;
+    }
+
+    @media (max-width: 790px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 15px;
+    }
+
+    @media (max-width: 675px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 40px;
+    }
+
+    @media (max-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 20px;
+    }
+
+    @media (max-width: 450px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    
+
+    /* @media (max-width: 910px) {
         grid-template-columns: repeat(3, 1fr);
         grid-row-gap: 30px;
         grid-column-gap: 20px;
@@ -232,7 +311,7 @@ Main.Products = styled.div`
         grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 30px;
         grid-column-gap: 20px;
-    }
+    } */
 
     /* @media (max-width: 1600px) {
         grid-row-gap: 50px;

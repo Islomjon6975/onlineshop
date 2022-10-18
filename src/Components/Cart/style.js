@@ -47,6 +47,9 @@ const Products = styled.div`
     padding: 10px;
     gap: 16px;
     overflow: auto;
+
+    @media (max-width: 500px) {
+    }
 `
 
 const Product = styled.div`
@@ -56,6 +59,12 @@ const Product = styled.div`
     grid-column-gap: 20px;
     padding-bottom: 16px;
     border-bottom: 0.3px solid rgba(70, 163, 88, 0.5);
+    
+    @media (max-width: 500px) {
+        grid-template-columns: 70px 1fr 80px 50px;
+        grid-column-gap: 10px;
+
+    }
 `
 
 Product.ImageWrapper = styled.div`
@@ -88,6 +97,10 @@ Product.Content.Title = styled.div`
     font-size: 16px;
     line-height: 16px;
     color: #3D3D3D;
+
+    @media (max-width: 500px) {
+        font-size: 14px;
+    }
 
     -webkit-touch-callout: none; // iOS Safari
     -webkit-user-select: none; // Safari
@@ -122,6 +135,10 @@ Product.Content.Price = styled.div`
     line-height: 16px;
     color: #727272;
     margin-top: 16px;
+    
+    @media (max-width: 500px) {
+        font-size: 14px;
+    }
 
     -webkit-touch-callout: none; // iOS Safari
     -webkit-user-select: none; // Safari
@@ -137,6 +154,10 @@ Product.Counter = styled.div`
     justify-content: center;
     align-items: center;
     gap: 12px;
+
+    @media (max-width: 500px) {
+        gap: 6px;
+    }
 `
 
 Product.Counter.Text = styled.div`
@@ -157,6 +178,10 @@ Product.Counter.Text = styled.div`
     -ms-user-select: none; // Internet Explorer/Edge
     user-select: none; /* Non-prefixed version, currently
                         supported by Chrome, Opera and Firefox */
+
+    @media (max-width: 500px) {
+        font-size: 16px;
+    }
 `
 
 Product.Counter.Wrapper = styled.div`
@@ -165,7 +190,6 @@ Product.Counter.Wrapper = styled.div`
     align-items: center;
     width: 33px;
     height: 33px;
-    /* background: linear-gradient(180deg, #46A358 0%, rgba(70, 163, 88, 0.8) 100%); */
     background: #46A358;
     border-radius: 50%;
     transition: transform .2s ease-in-out;
@@ -173,6 +197,11 @@ Product.Counter.Wrapper = styled.div`
     :active {
         transform: scale(0.97);
         opacity: 0.7;
+    }
+
+    @media (max-width: 500px) {
+        width: 25px;
+        height: 25px;
     }
 `
 
@@ -194,6 +223,11 @@ Product.Icon = styled.div`
     :active {
         transform: scale(0.97);
         opacity: 0.7;
+    }
+
+    @media (max-width: 500px) {
+        width: 30px;
+        height: 30px;
     }
 `
 Product.Trash = styled(trash)`
@@ -222,6 +256,11 @@ Footer.Title = styled.div`
     -ms-user-select: none; // Internet Explorer/Edge
     user-select: none; /* Non-prefixed version, currently
                         supported by Chrome, Opera and Firefox */
+
+    @media (max-width: 500px) {
+        font-weight: 700;
+        font-size: 16px;
+    }
 `
 
 Footer.Wrapper = styled.div`
@@ -245,6 +284,11 @@ Footer.Total = styled.div`
     -ms-user-select: none; // Internet Explorer/Edge
     user-select: none; /* Non-prefixed version, currently
                         supported by Chrome, Opera and Firefox */
+
+    @media (max-width: 500px) {
+        font-weight: 700;
+        font-size: 14px;
+    }
 `
 
 Footer.TotalPrice = styled.div`
@@ -254,6 +298,10 @@ Footer.TotalPrice = styled.div`
     line-height: 16px;
     text-align: right;
     color: #46A358;
+
+    @media (max-width: 500px) {
+        font-size: 14px;
+    }
 
     -webkit-touch-callout: none; // iOS Safari
     -webkit-user-select: none; // Safari

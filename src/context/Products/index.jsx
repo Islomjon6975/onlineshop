@@ -13,7 +13,9 @@ const ProductsContext = ({children}) => {
         max: 500, 
         cart: [],
         basket: false,
-        totalPrice: 0
+        totalPrice: 0,
+        modal: false,
+        humburger: false
     })
     return(
         <Context.Provider value={[state, dispatch]}>

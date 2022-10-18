@@ -11,6 +11,7 @@ const Container = styled.div`
     /* width: 258px; */
     min-width: 258px;
 
+
     :hover{
         border-top: 2px solid #46A358;
     }
@@ -21,11 +22,21 @@ const Container = styled.div`
         min-width: 238px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
+        max-width: 250px;
+        min-width: 200px;
+    }
+
+    @media (max-width: 440px) {
+        min-width: 135px;
+        width: fit-content;
+        width: fit-content;
+    }
+
+    /* @media (max-width: 600px) {
         max-width: 161px;
         min-width: 161px;
-
-    }
+    } */
 `
 
 Container.ImageWrapper = styled.div`
@@ -42,12 +53,27 @@ Container.ImageWrapper = styled.div`
         height: 250px;
     }
 
+    @media (max-width: 800px) {
+        height: 230px;
+    }
+
+    @media (max-width: 665px) {
+        height: 230px;
+    }
+
+    @media (max-width: 440px) {
+        height: fit-content;
+        width: fit-content;
+    }
+
     @media (max-width: 600px) {
         background: linear-gradient(143.28deg, #F4F4F4 -12%, #FAFAFA 106.59%);
         border-radius: 20px;
         overflow: hidden;
         border: 1px solid #999;
     }
+
+    
 `
 
 Container.Blur = styled.div`
@@ -67,8 +93,14 @@ Container.ImageWrapper.Image = styled.img`
     }
 
     @media (max-width: 600px) {
-        width: 132px;
-        height: 132px;
+        min-width: 132px;
+        min-height: 132px;
+    }
+
+    @media (max-width: 440px) {
+        max-height: 180px;
+        height: 100%;
+        max-width: 200px;
     }
 `
 

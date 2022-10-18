@@ -57,7 +57,7 @@ Wrapper.Left = styled.div`
     height: 100%;
 
     @media (max-width: 500px) {
-        flex: 1.1;
+        flex: 1.4;
     }
 `
 
@@ -175,6 +175,11 @@ Wrapper.Right = styled.div`
 
 Wrapper.ImageWrapper = styled.div`
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
 `
 
 Wrapper.ImgOne = styled.img`
@@ -201,38 +206,57 @@ Wrapper.ImgOne = styled.img`
         height: 225px;
     }
 
+    @media (max-width: 600px) {
+
+        width: 225px;
+        height: 225px;
+    }
+
     @media (max-width: 500px) {
         width: 215px;
         height: 215px;
+        margin-right: -50px;
     }
 
     @media (max-width: 428px) {
         width: 213px;
         height: 213px;
+        margin-right: -80px;
     }
 `
 
 Wrapper.ImgTwo = styled.img`
     position: absolute;
-    left:40px;
+    right:340px;
     bottom: 35px;
     width: 135px;
     height: 135px;
 
+    @media (max-width: 1200px) {
+        right:270px;
+        bottom: 20px;
+    }
+
     @media (max-width: 1010px) {
-        left:6px;
+        right:200px;
         bottom: 20px;
     }
 
     @media (max-width: 834px) {
-        left:6px;
+        right:140px;
         bottom: 12px;
         width: 95px;
         height: 95px;
     }
 
+    @media (max-width: 500px) {
+        right:80px;
+        width: 82px;
+        height: 82px;
+    }
 
     @media (max-width: 428px) {
+        right:60px;
         width: 82px;
         height: 82px;
     }
