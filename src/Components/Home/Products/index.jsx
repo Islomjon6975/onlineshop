@@ -79,6 +79,7 @@ export const Products = () => {
                           discount={value?.discount}
                           like={value?.like}
                           quantity={value?.quantity}
+                          addtocart={value?.addtocart}
                         />
                     )
                   })

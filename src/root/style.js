@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
     max-width: 1920px;
-    min-width: 428px;
+    /* min-width: 428px; */
+    min-width: 1200px;
     width: 100%;
     margin: auto;
     display: flex;

@@ -11,7 +11,6 @@ const getType = (type) => {
         case 'secondary':
             return {
                 gap: '6px',
-                
             }
 
         default:

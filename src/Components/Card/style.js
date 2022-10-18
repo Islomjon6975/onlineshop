@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {ReactComponent as basket} from '../../assets/icons/basket.svg'
 import {ReactComponent as heart} from '../../assets/icons/heart.svg'
 import {ReactComponent as search} from '../../assets/icons/search.svg'
+import {ReactComponent as trash} from '../../assets/icons/trash.svg'
 import {ReactComponent as redHeart} from '../../assets/icons/red-heart.svg'
 
 
@@ -35,6 +36,7 @@ Container.ImageWrapper = styled.div`
     justify-content: center;
     align-items: center;
     background: #FBFBFB;
+    opacity: ${({blur}) => blur && '0.5'};
 
     @media (max-width: 900px) {
         height: 250px;
@@ -46,6 +48,16 @@ Container.ImageWrapper = styled.div`
         overflow: hidden;
         border: 1px solid #999;
     }
+`
+
+Container.Blur = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index:2;
+    background-color: ${({blur}) => blur ? 'rgba(0, 0, 0, 0.1)' : 'none'} ;
 `
 
 Container.ImageWrapper.Image = styled.img`
@@ -75,12 +87,21 @@ Container.Off = styled.div`
     font-size: 16px;
     line-height: 16px;
     color: #FFFFFF;
+
+    -webkit-touch-callout: none; // iOS Safari
+    -webkit-user-select: none; // Safari
+    -khtml-user-select: none; // Konqueror HTML
+    -moz-user-select: none; // Old versions of Firefox
+    -ms-user-select: none; // Internet Explorer/Edge
+    user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome, Opera and Firefox */
 `
 
 Container.Icons = styled.div`
     position: absolute;
     bottom: 7px;
     left: 50%;
+    z-index: 11;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
@@ -102,6 +123,7 @@ Container.Icons.Basket = styled(basket)``
 Container.Icons.Heart = styled(heart)``
 Container.Icons.Search = styled(search)``
 Container.Icons.RedHeart = styled(redHeart)``
+Container.Icons.Trash = styled(trash)``
 
 Container.Title = styled.div`
     font-style: normal;
@@ -110,6 +132,14 @@ Container.Title = styled.div`
     line-height: 16px;
     color: #3D3D3D;
     margin: 12px 0px 6px 0px;
+
+    -webkit-touch-callout: none; // iOS Safari
+    -webkit-user-select: none; // Safari
+    -khtml-user-select: none; // Konqueror HTML
+    -moz-user-select: none; // Old versions of Firefox
+    -ms-user-select: none; // Internet Explorer/Edge
+    user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome, Opera and Firefox */
 `
 
 Container.Price = styled.div`
@@ -118,6 +148,14 @@ Container.Price = styled.div`
     font-size: 18px;
     line-height: 16px;
     color: #46A358;
+
+    -webkit-touch-callout: none; // iOS Safari
+    -webkit-user-select: none; // Safari
+    -khtml-user-select: none; // Konqueror HTML
+    -moz-user-select: none; // Old versions of Firefox
+    -ms-user-select: none; // Internet Explorer/Edge
+    user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome, Opera and Firefox */
 `
 
 Container.OriginalPrice = styled.span`
@@ -129,6 +167,14 @@ Container.OriginalPrice = styled.span`
     text-decoration: line-through;
     display: inline-block;
     margin-left: 4px;
+
+    -webkit-touch-callout: none; // iOS Safari
+    -webkit-user-select: none; // Safari
+    -khtml-user-select: none; // Konqueror HTML
+    -moz-user-select: none; // Old versions of Firefox
+    -ms-user-select: none; // Internet Explorer/Edge
+    user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome, Opera and Firefox */
 `
 
 export {Container}

@@ -51,7 +51,7 @@ export const reducer = (state, action) => {
                 let sortByRange = data.filter((value) => (state.max > value.price && state.min < value.price) && value)
                 return {...state, data: sortByRange, min: action.payload.min, max: action.payload.max}
             
-            case 'basket':
+            case 'addtocart':
                 let selectedCart = null
                 let res = state.data.map((value) => {
                     if(value.id === action.payload.id) {
@@ -62,6 +62,47 @@ export const reducer = (state, action) => {
                     }
                 })
                 return {...state, data: res, cart: [...state.cart, selectedCart]}
+            
+            case 'cancelcart': 
+                let cancelcart = state.cart.filter((value) => {
+                    if(value.id !== action.payload.id) {
+                        return value
+                    }
+                })
+                let canceladdtocart = state.data.map((value) => {
+                    if(value.id === action.payload.id) {
+                        return {...value, addtocart: false}
+                    } else {
+                        return value
+                    }
+                })
+                return {...state, cart: cancelcart, data: canceladdtocart}
+
+            case 'increment': 
+                let increment = state.cart.map((value) => {
+                    if(value.id === action.payload.id) {
+                        return {...value, quantity: value.quantity + 1}
+                    }
+                    else {
+                        return value
+                    }
+                })
+                
+
+                return {...state, cart: increment, }
+
+            case 'decrement': 
+                let decrement = state.cart.map((value) => {
+                    if(value.id === action.payload.id && value.quantity > 1) {
+                        return {...value, quantity: value.quantity - 1}
+                    }
+                    else {
+                        return value
+                    }
+                })
+
+                return {...state, cart: decrement}
+
             default: return {...state, data: state.data}
         }
 }

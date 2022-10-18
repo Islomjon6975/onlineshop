@@ -12,7 +12,8 @@ export const Card = ({
     salePrice,
     discount,
     like,
-    quantity
+    quantity,
+    addtocart
 }) => {
     const [change, setChange] = useState(false)
     const [state, dispatch] = useProducts()
@@ -28,15 +29,19 @@ export const Card = ({
           },
         });
       };
-      
 
   return (
     <Container  onMouseOver = {() => setChange(true)} onMouseLeave = {() => setChange(false)}>
-        <Container.ImageWrapper>
+      
+        <Container.ImageWrapper> 
+          <Container.Blur blur={addtocart}>
+          </Container.Blur>
             <Container.ImageWrapper.Image src={flower1} />
             {discount > 0 && <Container.Off>{discount}% OFF</Container.Off>}
             <Container.Icons hover={change}>
-                <Container.Icons.Wrapper onClick={openNotification}><Container.Icons.Basket onClick={() => dispatch({type: 'basket', payload: {id: id}})} /></Container.Icons.Wrapper>
+                {
+                  addtocart ? <Container.Icons.Wrapper><Container.Icons.Trash onClick={() => dispatch({type: 'cancelcart', payload: {id: id}})} /></Container.Icons.Wrapper> : <Container.Icons.Wrapper onClick={openNotification}><Container.Icons.Basket onClick={() => dispatch({type: 'addtocart', payload: {id: id}})} /></Container.Icons.Wrapper>
+                }
                 <Container.Icons.Wrapper>
                     {
                         like ? <Container.Icons.RedHeart onClick={() => dispatch({type: 'redHeart', payload: {id: id}})} /> : <Container.Icons.Heart onClick={() => dispatch({type: 'heart', payload: {id: id}})} />
