@@ -10,7 +10,7 @@ export const HomeComponents = () => {
     <>
         <Header />
         <Products />
-        {/* <Banners /> */}
+        <Banners />
         {/* <Posts /> */}
         <Login />
     </>

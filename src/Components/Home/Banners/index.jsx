@@ -7,7 +7,7 @@ import { Button } from '../../Generic/Button'
 export const Banners = () => {
   return (
     <Container>
-       <Box>
+        <Box>
           <Box.ImageWrapper>
             <Box.ImageWrapper.Image src={banner1} />
           </Box.ImageWrapper>
@@ -17,8 +17,7 @@ export const Banners = () => {
             <Button width='150px'>Find More</Button>
           </Box.Content>
        </Box>
-
-       <Box>
+        <Box>
           <Box.ImageWrapper>
             <Box.ImageWrapper.Image src={banner2} />
           </Box.ImageWrapper>
