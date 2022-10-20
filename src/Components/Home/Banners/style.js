@@ -6,7 +6,7 @@ const Container = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
     margin-top: 100px;
-    margin-bottom: 138px;
+    margin-bottom: 80px;
 
     @media (max-width: 1350px) {
         grid-gap: 30px;
@@ -22,6 +22,7 @@ const Container = styled.div`
 
     @media (max-width: 470px) {
         grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 50px;
     }
 
 `
