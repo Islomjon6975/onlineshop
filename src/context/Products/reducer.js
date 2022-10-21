@@ -53,15 +53,17 @@ export const reducer = (state, action) => {
             
             case 'addtocart':
                 let selectedCart = null
+                let totalPriceAddtocart = state.totalPrice
                 let res = state.data.map((value) => {
                     if(value.id === action.payload.id) {
+                        totalPriceAddtocart += value.price * value.quantity
                         selectedCart = {...value, addtocart: true}
                         return {...value, addtocart: true}
                     } else {
                         return value
                     }
                 })
-                return {...state, data: res, cart: [...state.cart, selectedCart]}
+                return {...state, data: res, cart: [...state.cart, selectedCart], totalPrice: totalPriceAddtocart}
             
             case 'cancelcart': 
                 let cancelcart = state.cart.filter((value) => {
@@ -89,7 +91,7 @@ export const reducer = (state, action) => {
                 })
                 
 
-                return {...state, cart: increment, }
+                return {...state, cart: increment}
 
             case 'decrement': 
                 let decrement = state.cart.map((value) => {
