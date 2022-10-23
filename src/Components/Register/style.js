@@ -39,7 +39,7 @@ const Wrapper = styled.div`
     padding: 52px 100px 40px 100px;
 `
 
-Wrapper.Box = styled.div`
+Wrapper.Box = styled.form`
     width: 100%;
     display: flex;
     flex-direction: column;

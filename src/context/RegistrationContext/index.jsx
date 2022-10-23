@@ -11,12 +11,13 @@ export const RegistrationContext = ({children}) => {
 
             default: return {...state}
         }
-    },{
+    }, localStorage.getItem('register') ? JSON.parse(localStorage.getItem('register')) : {
         username: '',
         email: '',
         password: '',
         confirmPassword: ''
     })
+    localStorage.setItem('register', JSON.stringify(state))
     
     return(
         <Context.Provider value={[state, dispatch]}>

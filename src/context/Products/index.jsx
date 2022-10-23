@@ -6,7 +6,7 @@ const Context = createContext();
 export const useProducts = () => useContext(Context)
 
 const ProductsContext = ({children}) => {
-    const [state, dispatch] = useReducer(reducer, {
+    const [state, dispatch] = useReducer(reducer, localStorage.getItem('state') ? JSON.parse(localStorage.getItem('state')) : {
         data: data, 
         favourites: [], 
         min: 0, 
@@ -17,6 +17,8 @@ const ProductsContext = ({children}) => {
         modal: false,
         humburger: false
     })
+
+    localStorage.setItem('state', JSON.stringify(state))
     return(
         <Context.Provider value={[state, dispatch]}>
             {children}

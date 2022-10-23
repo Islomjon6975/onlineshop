@@ -3,9 +3,14 @@ import { Container, Footer, Product, Products, Wrapper } from './style';
 import flower1 from '../../assets/images/flower1.png'
 import { useProducts } from '../../context/Products';
 import { Button } from '../Generic/Button';
+import { message } from 'antd';
 
 export const Cart = () => {
   const [state, dispatch] = useProducts();
+
+  const error = (title ) => {
+    message.error(`${title} has been deleted from Cart`);
+  };
   return (
     <Container title="Products" width={ window.matchMedia("(max-width: 500px)").matches ? '100%' : 500} placement="right" onClose={() => dispatch({type: 'closeCart'})} open={state.basket}>
         <Wrapper>
@@ -27,7 +32,7 @@ export const Cart = () => {
                         <Product.Counter.Text>{value?.quantity}</Product.Counter.Text>
                         <Product.Counter.Wrapper  onClick={() => dispatch({type: 'increment', payload: {id: value?.id}})}><Product.Counter.Increment /></Product.Counter.Wrapper>
                       </Product.Counter>
-                      <Product.Icon onClick = {() => dispatch({type: 'cancelcart', payload: {id: value?.id}})}><Product.Trash  /></Product.Icon>
+                      <Product.Icon onClick = {() => dispatch({type: 'cancelcart', payload: {id: value?.id}})}><Product.Trash onClick={() => error(value.title)}  /></Product.Icon>
                     </Product>
                   )
                 })

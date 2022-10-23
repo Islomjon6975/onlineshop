@@ -148,10 +148,14 @@ Wrapper.Li = styled(NavLink)`
     list-style-type: none;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
+    font-weight: ${({active}) => active ? '600' : '400'};
     font-size: 16px;
     line-height: 19px;
-    color: #3D3D3D;
+    color: ${({active}) => active ? 'green' : '#3D3D3D'};
+
+    :hover {
+        color: ${({active}) => active ? 'green' :  '#3D3D3D' } !important;
+    }
 `
 
 Wrapper.ButtonWrapper = styled.div`

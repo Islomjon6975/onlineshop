@@ -1,4 +1,5 @@
 import { HomeComponents } from "../Components/Home";
+import { Shop } from "../pages/Shop";
 
 export const navbar = [
     {
@@ -12,7 +13,7 @@ export const navbar = [
         id: 2,
         title: "Shop",
         path: '/shop',
-        element: <h1>Shop Page</h1>,
+        element: <Shop />,
         isPrivate: true,
     }
 ]

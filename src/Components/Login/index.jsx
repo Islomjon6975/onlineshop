@@ -18,14 +18,14 @@ export const Login = () => {
     })
 
     const login = () => {
-        
         if(signIn.email === register.email && signIn.password === register.password) {
             message.success('Successfully Logged In');
             localStorage.setItem('greenshopToken', JSON.stringify(register))
-            setSignIn({email: '', password: ''})
+            dispatch({type: 'closeModal'})
         } else {
             message.error('Something went wront while signing');
         }
+        setSignIn({email: '', password: ''})
     }
 
 
@@ -61,9 +61,9 @@ export const Login = () => {
     >
         <Wrapper>
             <Wrapper.Wrap>
-                <Title onClick={() => setColor('login')} color={color==='login' && '#46A358'}>Login</Title>
+                <Title onClick={() => setColor('login')} color={color==='login' ? '#46A358' : "none"}>Login</Title>
                 <Wrapper.Line />
-                <Title onClick={() => setColor('register')} color={color==='register' && '#46A358'}>Register</Title>
+                <Title onClick={() => setColor('register')} color={color==='register' ? '#46A358' : "none"}>Register</Title>
             </Wrapper.Wrap>
 
             {

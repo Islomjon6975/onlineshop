@@ -7,9 +7,15 @@ import { Basket, Container, Greenshop, Logo, Logout, Search, Wrapper, Hamburger,
 import {useNavigate} from 'react-router-dom'
 import {Outlet} from 'react-router-dom'
 import { Login } from '../Login';
+const active = (url) => {
+    return window.location.pathname.includes(url)
+}
 export const Navbar = () => {
     const [state, dispatch] = useProducts()
     const navigate = useNavigate()
+    const token = JSON.parse(localStorage.getItem('greenshopToken'))
+
+
   return (
     <Container>
         <Wrapper>
@@ -30,17 +36,14 @@ export const Navbar = () => {
                 <Wrapper.Wrap>
                     <Wrapper.Ul>
                         {navbar.map((item) => {
-                            if(!item.isPrivate) {
                                 return(
-                                    <Wrapper.Li key={item.id} to={item.path}>{item.title}</Wrapper.Li>
+                                    !item.isPrivate && <Wrapper.Li active={active(item.path)} exact key={item.id} to={item.path}>{item.title}</Wrapper.Li>
                                 )
-                            } else {
-                                if(!localStorage.getItem('greenshopTokent')) {
-                                    navigate('/login')
-                                } else {
-                                    <Wrapper.Li key={item.id} to={item.path}>{item.title}</Wrapper.Li>
-                                }
-                            }
+                        })}
+                        {navbar.map((item) => {
+                                return(
+                                item.isPrivate &&  <Wrapper.Li  active={active(item.path)} onClick={!token ? ()=> dispatch({type: 'openModal'}) : 'none'}  exact key={item.id} to={token && item.path}>{item.title}</Wrapper.Li>
+                                )
                         })}
                     </Wrapper.Ul>
                 </Wrapper.Wrap>
@@ -53,8 +56,8 @@ export const Navbar = () => {
                         </Wrapper.BasketWrapper>
                         
                         <Wrapper.ButtonWrapper>
-                            <Button onClick={() => dispatch({type: 'openModal'})} type="primary" width='100px' icon={<Logout />}>
-                                Login
+                            <Button onClick={() => dispatch({type: 'openModal'})} type="primary" width={token ? 'fit-content' : '100px'} icon={<Logout />}>
+                                {token ? token.username : 'Login' }
                             </Button>
                         </Wrapper.ButtonWrapper>
                         <Hamburger onClick={() => dispatch({type: 'openHumburger'})}  />

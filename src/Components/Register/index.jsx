@@ -29,11 +29,11 @@ export const Register = () => {
   return (
             <Wrapper.Box>
                 <Wrapper.Label>Enter your username and password to login.</Wrapper.Label>
-                <Input onChange={(e) => setSignUp({...signUp, username: e.target.value})}  mb='17px' type="text" placeholder='Username' />
-                <Input onChange={(e) => setSignUp({...signUp, email: e.target.value})} mb='17px' type="email" placeholder='Enter your email address' />
-                <Input onChange={(e) => setSignUp({...signUp, password: e.target.value})} mb='14px' type="password" placeholder='Password' />
-                <Input onChange={(e) => setSignUp({...signUp, confirmPassword: e.target.value})}  mb='14px' type="password" placeholder='Confirm Password' />
-                <Button onClick={register} mb='46px'>Register</Button>
+                <Input required onChange={(e) => setSignUp({...signUp, username: e.target.value})}  mb='17px' type="text" placeholder='Username' />
+                <Input required onChange={(e) => setSignUp({...signUp, email: e.target.value})} mb='17px' type="email" placeholder='Enter your email address' />
+                <Input required onChange={(e) => setSignUp({...signUp, password: e.target.value})} mb='14px' type="password" placeholder='Password' />
+                <Input required onChange={(e) => setSignUp({...signUp, confirmPassword: e.target.value})}  mb='14px' type="password" placeholder='Confirm Password' />
+                <Button type='submit' onClick={register} mb='46px'>Register</Button>
                 <Wrapper.Wrap>
                     <Wrapper.Or />
                     <Wrapper.OrLoginWith>Or register with</Wrapper.OrLoginWith>

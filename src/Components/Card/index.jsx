@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Container } from './style'
 import flower1 from '../../assets/images/flower1.png'
 import { useProducts } from '../../context/Products'
-import { notification } from 'antd';
+import { message, notification } from 'antd';
 
 export const Card = ({
     id,
@@ -17,18 +17,16 @@ export const Card = ({
 }) => {
     const [change, setChange] = useState(false)
     const [state, dispatch] = useProducts()
+    const token = JSON.parse(localStorage.getItem('greenshopToken'))
 
 
-    const openNotification = () => {
-        notification.open({
-          message: 'Notification Title',
-          description:
-            'This is the content of the notification.',
-          onClick: () => {
-            console.log('Notification Clicked!');
-          },
-        });
-      };
+    const success = (title ) => {
+      message.success(`${title} has been added to Cart`);
+    };
+
+    const error = (title ) => {
+      message.error(`${title} has been deleted from Cart`);
+    };
 
   return (
     <Container  onMouseOver = {() => setChange(true)} onMouseLeave = {() => setChange(false)}>
@@ -40,7 +38,7 @@ export const Card = ({
             {discount > 0 && <Container.Off>{discount}% OFF</Container.Off>}
             <Container.Icons hover={change}>
                 {
-                  addtocart ? <Container.Icons.Wrapper><Container.Icons.Trash onClick={() => dispatch({type: 'cancelcart', payload: {id: id}})} /></Container.Icons.Wrapper> : <Container.Icons.Wrapper onClick={openNotification}><Container.Icons.Basket onClick={() => dispatch({type: 'addtocart', payload: {id: id}})} /></Container.Icons.Wrapper>
+                  addtocart ? <Container.Icons.Wrapper onClick={() => error(title)}><Container.Icons.Trash onClick={() => dispatch({type: 'cancelcart', payload: {id: id}})} /></Container.Icons.Wrapper> : <Container.Icons.Wrapper onClick={token ? () => success(title) : null}><Container.Icons.Basket onClick={token ? () => dispatch({type: 'addtocart', payload: {id: id}}) : () => dispatch({type: "openModal"})} /></Container.Icons.Wrapper>
                 }
                 <Container.Icons.Wrapper>
                     {

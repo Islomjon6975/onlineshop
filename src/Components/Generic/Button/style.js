@@ -29,7 +29,7 @@ const Container = styled.div`
     gap: 6px;
     transition: transform .3s ease-in-out;
     cursor: pointer;
-
+    padding: 0 10px;
     height: ${({ height }) => height || '35px'};
     min-width: ${({ width }) => (width ? width : '100%')};
     width: ${({ width }) => (width ? width : '100%')};
