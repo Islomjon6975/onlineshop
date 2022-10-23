@@ -9,6 +9,10 @@ const Container = styled.div`
     margin: auto;
     gap: 25px;
     margin-bottom: 100px;
+
+    @media (max-width: 500px) {
+        padding: 0 16px;
+    }
 `
 
 Container.Title = styled.div`
@@ -23,6 +27,12 @@ Container.Wrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 28px;
+    @media (max-width: 550px) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 28px;
+    }
+
+    
 `
 
 Container.Label = styled.label`
@@ -54,6 +64,7 @@ Container.Descs = styled.div`
 
 Container.Textarea = styled.textarea`
     width: 100%;
+    border: 1px solid #EAEAEA;
     height: ${({height}) => height ? height : '63px'};
     :focus {
         outline: 1px solid #46A358;
@@ -66,11 +77,28 @@ Container.ImageWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 16px;
+    
+
+    @media (max-width: 900px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 550px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 `
 
 Container.Image = styled.div`
     background: #C4C4C4;
     height: 203px;
+
+    @media (max-width: 650px) {
+        height: 180px;
+    }
+
+    @media (max-width: 400px) {
+        height: 160px;
+    }
 `
 
 export {Container}

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Login } from '../Login'
 import { Banners } from './Banners'
 import { Header } from './Header'
 import { Posts } from './Posts'
@@ -12,7 +11,6 @@ export const HomeComponents = () => {
         <Products />
         <Banners />
         <Posts />
-        <Login />
     </>
   )
 }

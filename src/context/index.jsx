@@ -1,13 +1,13 @@
 import React from 'react'
-import PluginsContext from './Plugins'
 import ProductsContext from './Products'
+import { RegistrationContext } from './RegistrationContext'
 
 export const Context = ({children}) => {
   return (
     <ProductsContext>
-      <PluginsContext>
+      <RegistrationContext>
         {children}
-      </PluginsContext>
+      </RegistrationContext>
     </ProductsContext>
   )
 }

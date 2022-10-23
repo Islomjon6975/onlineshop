@@ -1,7 +1,7 @@
 import { data } from "../../utils/data";
 
 export const reducer = (state, action) => {
-        switch(action.type) {
+    switch(action.type) {
             case 'heart': 
                 let favouritesOne = null;
                 let heart = state.data.map(value => {

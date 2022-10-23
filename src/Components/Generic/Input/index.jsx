@@ -16,11 +16,13 @@ export const Input = memo(({
     pt,
     pr,
     pb,
-    pl
+    pl,
+    ref
     }) => {
     return (
         <Container
             type={type}
+            ref={ref}
             mr={mr}
             ml={ml}
             mb={mb}

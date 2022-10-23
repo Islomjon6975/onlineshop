@@ -7,6 +7,7 @@ import {ReactComponent as hamburger} from '../../assets/icons/hamburger-menu.svg
 import {ReactComponent as logout} from '../../assets/icons/logout.svg'
 import {ReactComponent as close} from '../../assets/icons/close.svg'
 import { Drawer } from "antd";
+import {NavLink} from 'react-router-dom'
 
 const common = css`
     display: flex;
@@ -25,6 +26,8 @@ const Container = styled.div`
         padding: 16px 16px;
         border-bottom: none;
     }
+    display: flex;
+    flex-direction: column;
 
 
 `
@@ -141,7 +144,7 @@ Wrapper.Ul = styled.ul`
     }
 `
 
-Wrapper.Li = styled.li`
+Wrapper.Li = styled(NavLink)`
     list-style-type: none;
     font-family: 'Inter';
     font-style: normal;
@@ -207,4 +210,10 @@ DrawerBar.Close = styled(close)`
     right: 30px;
 `
 
-export {Container, Wrapper, Logo, Greenshop, Search, Basket, Hamburger, Logout, DrawerBar}
+const OutletWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+`
+
+export {Container, Wrapper, Logo, Greenshop, Search, Basket, Hamburger, Logout, DrawerBar, OutletWrapper}

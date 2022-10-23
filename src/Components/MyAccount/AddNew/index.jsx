@@ -2,11 +2,11 @@ import React from 'react'
 import { Button } from '../../Generic/Button'
 import { Container } from './style'
 import { UploadOutlined } from '@ant-design/icons';
-import type { UploadProps } from 'antd';
+// import type { UploadProps } from 'antd';
 import { message, Upload } from 'antd';
 
 export const AddNew = () => {
-    const props: UploadProps = {
+    const props = {
         name: 'file',
         action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
         headers: {
@@ -68,7 +68,7 @@ export const AddNew = () => {
             <Container.Image>1</Container.Image>
             <Container.Image>1</Container.Image>
             <Upload {...props}>
-    <Button icon={<UploadOutlined />}>Click to Upload</Button>
+            <Button width='160px' icon={<UploadOutlined />}>Click to Upload</Button>
   </Upload>
         </Container.ImageWrapper>
         <Button width='131px'>Save Change</Button>

@@ -5,10 +5,29 @@ import { Input } from '../Generic/Input'
 import { Radio } from '../Generic/Radio'
 import { Register } from '../Register'
 import { Container, Title, Wrapper } from './style'
+import { message } from 'antd';
+import { useRegister } from '../../context/RegistrationContext'
 
 export const Login = () => {
     const [color, setColor] = useState('login')
     const [state, dispatch] = useProducts()
+    const [register, setRegistration] = useRegister()
+    const [signIn, setSignIn] = useState({
+        email: '',
+        password: ''
+    })
+
+    const login = () => {
+        
+        if(signIn.email === register.email && signIn.password === register.password) {
+            message.success('Successfully Logged In');
+            localStorage.setItem('greenshopToken', JSON.stringify(register))
+            setSignIn({email: '', password: ''})
+        } else {
+            message.error('Something went wront while signing');
+        }
+    }
+
 
     const [open, setOpen] = useState(false);
     const [confirmLoading, setConfirmLoading] = useState(false);
@@ -52,10 +71,10 @@ export const Login = () => {
                 ? (
                     <Wrapper.Box>
                         <Wrapper.Label>Enter your username and password to login.</Wrapper.Label>
-                        <Input mb='17px' type="email" placeholder='Email' />
-                        <Input mb='14px' type="password" placeholder='Password' />
+                        <Input value={signIn.value} onChange={(e)=>setSignIn({...signIn, email: e.target.value})} mb='17px' type="email" placeholder='Email' />
+                        <Input value={signIn.password} onChange={(e)=>setSignIn({...signIn, password: e.target.value})} mb='14px' type="password" placeholder='Password' />
                         <Wrapper.Forgot>Forgot Password?</Wrapper.Forgot>
-                        <Button mb='46px'>Login</Button>
+                        <Button onClick={login} mb='46px'>Login</Button>
                         <Wrapper.Wrap>
                             <Wrapper.Or />
                             <Wrapper.OrLoginWith>Or login with</Wrapper.OrLoginWith>
