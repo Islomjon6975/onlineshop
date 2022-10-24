@@ -2,7 +2,7 @@ import React, {  useState } from 'react'
 import { Button } from '../Generic/Button'
 import { Input } from '../Generic/Input'
 import { Radio } from '../Generic/Radio'
-import { Wrapper } from './style'
+import { Select, Wrapper } from './style'
 import { message } from 'antd';
 import { useRegister } from '../../context/RegistrationContext'
 export const Register = () => {
@@ -12,15 +12,16 @@ export const Register = () => {
         username: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        role: 'user'
     })
 
     const register = () => {
-        const {username, email, password, confirmPassword} = signUp
+        const {username, email, password, confirmPassword, role} = signUp
 
         if(username.length > 2 && email.length > 8 && (email.includes('gmail.com') || email.includes('mail.ru')) && password.length > 3 && confirmPassword === password) {
             message.success('Successfully Registered');
-            setRegistration({type: 'register', payload: {user: signUp}})
+            setRegistration({type: 'register', payload: {user: signUp, role: role}})
         } else {
             message.error('Something went wrong while registering!');
         }
@@ -33,6 +34,10 @@ export const Register = () => {
                 <Input required onChange={(e) => setSignUp({...signUp, email: e.target.value})} mb='17px' type="email" placeholder='Enter your email address' />
                 <Input required onChange={(e) => setSignUp({...signUp, password: e.target.value})} mb='14px' type="password" placeholder='Password' />
                 <Input required onChange={(e) => setSignUp({...signUp, confirmPassword: e.target.value})}  mb='14px' type="password" placeholder='Confirm Password' />
+                <Select defaultValue={'user'} onChange={(e) => setSignUp({...signUp, role: e.target.value})}>
+                    <Select.Option value='user'>User</Select.Option>
+                    <Select.Option value='seller'>Seller</Select.Option>
+                </Select>
                 <Button type='submit' onClick={register} mb='46px'>Register</Button>
                 <Wrapper.Wrap>
                     <Wrapper.Or />

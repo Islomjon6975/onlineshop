@@ -94,8 +94,10 @@ export const reducer = (state, action) => {
                 return {...state, cart: increment}
 
             case 'decrement': 
+                // let totalPriceDecrement = state.totalPrice
                 let decrement = state.cart.map((value) => {
                     if(value.id === action.payload.id && value.quantity > 1) {
+                        // totalPriceIncrement -= value.quantity * value.price
                         return {...value, quantity: value.quantity - 1}
                     }
                     else {

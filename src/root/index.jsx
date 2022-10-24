@@ -5,6 +5,8 @@ import { Container } from './style'
 import {Routes, Route, Navigate} from 'react-router-dom'
 import { navbar } from '../utils/navbar'
 import { useProducts } from '../context/Products'
+import { myprofile } from '../utils/myprofile'
+import { MyAccount } from '../Components/MyAccount'
 
 export const Root = () => {
   const token = JSON.parse(localStorage.getItem('greenshopToken'))
@@ -24,6 +26,12 @@ export const Root = () => {
                     isPrivate && <Route exact key={id} path={path} element={token && element } />
                   )
               })}
+            </Route>
+            <Route element={<MyAccount />}>
+              {myprofile.map(({ id, path, element }) => {
+                return  (
+                  <Route key={id} path={path} element={element} />
+              )})}
             </Route>
           </Routes>
           <Footer />

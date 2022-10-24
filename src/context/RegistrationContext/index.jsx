@@ -7,7 +7,8 @@ export const RegistrationContext = ({children}) => {
     const [state, dispatch] = useReducer((state, action ) => {
         switch(action.type) {
             case 'register':
-                return {...state, username: action.payload.user.username, email: action.payload.user.email, password: action.payload.user.password, confirmPassword: action.payload.user.confirmPassword}
+                console.log(state, 'rolllll')
+                return {...state, username: action.payload.user.username, email: action.payload.user.email, password: action.payload.user.password, confirmPassword: action.payload.user.confirmPassword, role: action.payload.role}
 
             default: return {...state}
         }
@@ -15,7 +16,8 @@ export const RegistrationContext = ({children}) => {
         username: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        role: ''
     })
     localStorage.setItem('register', JSON.stringify(state))
     

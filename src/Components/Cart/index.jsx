@@ -7,10 +7,10 @@ import { message } from 'antd';
 
 export const Cart = () => {
   const [state, dispatch] = useProducts();
-
   const error = (title ) => {
     message.error(`${title} has been deleted from Cart`);
   };
+
   return (
     <Container title="Products" width={ window.matchMedia("(max-width: 500px)").matches ? '100%' : 500} placement="right" onClose={() => dispatch({type: 'closeCart'})} open={state.basket}>
         <Wrapper>

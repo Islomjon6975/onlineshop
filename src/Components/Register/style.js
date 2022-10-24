@@ -116,4 +116,20 @@ Wrapper.Radios = styled.div`
     margin-top: 27px;
 `
 
-export {Container, Wrapper, Title}
+const Select = styled.select`
+    width: 100%;
+    height: 40px;
+    /* background: #46A358; */
+    margin-bottom: 50px;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 15px;
+    color: #333;
+    padding-right: 15px !important;
+`
+
+Select.Option = styled.option`
+
+`
+
+export {Container, Wrapper, Title, Select}

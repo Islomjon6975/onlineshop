@@ -3,15 +3,17 @@ import { useProducts } from '../../context/Products';
 import { navbar } from '../../utils/navbar';
 import { Cart } from '../Cart';
 import { Button } from '../Generic/Button'
-import { Basket, Container, Greenshop, Logo, Logout, Search, Wrapper, Hamburger, DrawerBar, OutletWrapper } from './style'
+import { Basket, Container, Greenshop, Logo, Logout, Search, Wrapper, Hamburger, DrawerBar, OutletWrapper, User } from './style'
 import {useNavigate} from 'react-router-dom'
 import {Outlet} from 'react-router-dom'
 import { Login } from '../Login';
+import { useRegister } from '../../context/RegistrationContext';
 const active = (url) => {
     return window.location.pathname.includes(url)
 }
 export const Navbar = () => {
     const [state, dispatch] = useProducts()
+    const [registration, setRegistration] = useRegister()
     const navigate = useNavigate()
     const token = JSON.parse(localStorage.getItem('greenshopToken'))
 
@@ -37,12 +39,12 @@ export const Navbar = () => {
                     <Wrapper.Ul>
                         {navbar.map((item) => {
                                 return(
-                                    !item.isPrivate && <Wrapper.Li active={active(item.path)} exact key={item.id} to={item.path}>{item.title}</Wrapper.Li>
+                                    !item.isPrivate  && <Wrapper.Li active={active(item.path)} exact key={item.id} to={item.path}>{item.title}</Wrapper.Li>
                                 )
                         })}
                         {navbar.map((item) => {
                                 return(
-                                item.isPrivate &&  <Wrapper.Li  active={active(item.path)} onClick={!token ? ()=> dispatch({type: 'openModal'}) : 'none'}  exact key={item.id} to={token && item.path}>{item.title}</Wrapper.Li>
+                                item.isPrivate && !item.hidden &&   <Wrapper.Li  active={active(item.path)} onClick={!token ? ()=> dispatch({type: 'openModal'}) : 'none'}  exact key={item.id} to={token && item.path}>{item.title}</Wrapper.Li>
                                 )
                         })}
                     </Wrapper.Ul>
@@ -54,12 +56,25 @@ export const Navbar = () => {
                             <Basket onClick={() => dispatch({type: 'openCart'})} />
                             <Wrapper.Counter>{state?.cart?.length}</Wrapper.Counter>
                         </Wrapper.BasketWrapper>
-                        
-                        <Wrapper.ButtonWrapper>
+                        {
+                            JSON.parse(localStorage.getItem('register')).role === 'seller'
+                            ?
+                            (<Wrapper.ButtonWrapper>
+                                <User onClick={() => navigate('/myprofile')}>
+                                    <User.Icon />
+                                </User>
+                            </Wrapper.ButtonWrapper>)
+                            :
+                            (<Wrapper.ButtonWrapper>
                             <Button onClick={() => dispatch({type: 'openModal'})} type="primary" width={token ? 'fit-content' : '100px'} icon={<Logout />}>
                                 {token ? token.username : 'Login' }
                             </Button>
-                        </Wrapper.ButtonWrapper>
+                            </Wrapper.ButtonWrapper>
+                            )
+
+                        }
+
+                        
                         <Hamburger onClick={() => dispatch({type: 'openHumburger'})}  />
                     </Wrapper.Right>
                 </Wrapper.Wrap>
