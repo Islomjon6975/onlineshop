@@ -71,8 +71,8 @@ Sidebar.Logout = styled.div`
 Sidebar.Logout.Icon = styled(logout)``
 
 const OutletWrapper = styled.div`
-    height: 100px;
-    background-color: crimson;
+    /* background-color: crimson; */
+    border: 1px solid black;
 `
 
 export {Container, Sidebar, OutletWrapper}

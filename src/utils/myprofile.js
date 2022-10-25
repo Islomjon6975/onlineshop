@@ -2,13 +2,14 @@ import {ReactComponent as user} from '../assets/icons/myprofile-user.svg'
 import {ReactComponent as bag} from '../assets/icons/myprofile-bag.svg'
 import {ReactComponent as location} from '../assets/icons/myprofile-location.svg'
 import {ReactComponent as heart} from '../assets/icons/myprofile-heart.svg'
+import { AccountDetails } from '../Components/MyAccount/AccountDetails'
 
 export const myprofile = [
     {
         id: 1,
         title: 'Account Details',
         path: '/myprofile/account-details',
-        element: <h1>Accoun Details</h1>,
+        element: <AccountDetails />,
         icon: user
     },
     {
