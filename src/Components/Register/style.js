@@ -52,6 +52,88 @@ Wrapper.Wrap = styled.div`
     gap: 11px;
 `
 
+Wrapper.Form = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+`
+
+Wrapper.Phone = styled.div`
+    display: grid;
+    grid-template-columns: 78px 1fr;
+    grid-gap: 10px;
+`
+
+
+const Input = styled.input`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    gap: 6px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #A5A5A5;
+    
+    border: 1px solid #EAEAEA;
+    border-radius: 5px;
+    transition: transform .3s ease-in-out;
+    cursor: pointer;
+    padding-left: 14px;
+    width: 100%;
+    height: 40px;
+
+    -webkit-touch-callout: none; // iOS Safari
+    -webkit-user-select: none; // Safari
+    -khtml-user-select: none; // Konqueror HTML
+    -moz-user-select: none; // Old versions of Firefox
+    -ms-user-select: none; // Internet Explorer/Edge
+    user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome, Opera and Firefox */
+
+
+    :active {
+        transform: scale(0.97);
+        opacity: 0.7;
+    }
+    :focus {
+        outline: 1px solid #46A358;
+    }
+`
+
+const Select = styled.select`
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-left: 10px;
+    border: 1px solid #EAEAEA;
+    border-radius: 5px;
+    color: #A5A5A5;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+    color: #3D3D3D;
+    text-align: center;
+    color: #A5A5A5;
+    :active {
+        transform: scale(0.97);
+        opacity: 0.7;
+    }
+    :focus {
+        outline: 1px solid #46A358;
+    }
+`
+
+Select.Option = styled.option`
+
+`
+
 const Title = styled.div`
     font-style: normal;
     font-weight: 500;
@@ -116,20 +198,7 @@ Wrapper.Radios = styled.div`
     margin-top: 27px;
 `
 
-const Select = styled.select`
-    width: 100%;
-    height: 40px;
-    /* background: #46A358; */
-    margin-bottom: 50px;
-    border-radius: 5px;
-    outline: none;
-    padding-left: 15px;
-    color: #333;
-    padding-right: 15px !important;
-`
 
-Select.Option = styled.option`
 
-`
 
-export {Container, Wrapper, Title, Select}
+export {Container, Wrapper, Title, Select, Input}

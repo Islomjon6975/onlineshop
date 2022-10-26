@@ -8,16 +8,29 @@ export const RegistrationContext = ({children}) => {
         switch(action.type) {
             case 'register':
                 console.log(state, 'rolllll')
-                return {...state, username: action.payload.user.username, email: action.payload.user.email, password: action.payload.user.password, confirmPassword: action.payload.user.confirmPassword, role: action.payload.role}
+                return {
+                    ...state, 
+                    firstName: action.payload.user.firstName,
+                    lastName: action.payload.user.lastName,
+                    phone: `${action.payload.user.phoneCode}${action.payload.user.phone}`,
+                    username: action.payload.user.username, 
+                    email: action.payload.user.email, 
+                    password: action.payload.user.password, 
+                    confirmPassword: action.payload.user.confirmPassword, 
+                    role: action.payload.role}
 
             default: return {...state}
         }
     }, localStorage.getItem('register') ? JSON.parse(localStorage.getItem('register')) : {
+        firstName: '',
+        lastName: '',
+        phoneCode: '',
+        phone: '',
         username: '',
         email: '',
         password: '',
         confirmPassword: '',
-        role: ''
+        role: 'user'
     })
     localStorage.setItem('register', JSON.stringify(state))
     

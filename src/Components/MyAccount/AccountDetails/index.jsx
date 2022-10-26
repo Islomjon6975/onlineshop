@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react'
+import { useRegister } from '../../../context/RegistrationContext'
 import { Button } from '../../Generic/Button'
 import { Container, ImagePicker, Input, Label, Select } from './style'
 
 export const AccountDetails = () => {
+    const [registration, setRegistration] = useRegister();
     const [profileInfo, setProfileInfo] = useState({
         firstName: '',
         lastName: '',
@@ -35,8 +37,12 @@ export const AccountDetails = () => {
             newPassword: newPasswordRef.current.value,
             confirmPassword:confirmPasswordRef.current.value
         })
+
+        if(registration.password === currentPasswordRef.current.value ) {
+            localStorage.setItem('register', JSON.stringify(profileInfo))
+            alert('local')
+        }
     }
-    console.log(profileInfo)
   return (
     <Container>
         <Container.Title>Personal Information</Container.Title>
