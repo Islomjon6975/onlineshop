@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import { myprofile } from '../../utils/myprofile'
 import { AddNew } from './AddNew'
 import { Container, OutletWrapper, Sidebar } from './style'
@@ -16,19 +16,22 @@ export const MyAccount = () => {
     localStorage.removeItem('greenshopToken')
   };
   
+  const navigate = useNavigate()
+
   const cancel = (e) => {
     console.log(e);
     message.error('Click on No');
   };
   return (
     <Container>
+      <Container.Add onClick={() => navigate('/myprofile/addNew')}>Add New</Container.Add>
       <Sidebar>
         <Sidebar.Container>
           <Sidebar.Title>My Account</Sidebar.Title>
           <Sidebar.Wrapper>
             {
-              myprofile.map(({id, title, path, element, icon: Icon}) => {
-                return(
+              myprofile.map(({id, title, hidden, path, element, icon: Icon}) => {
+                return !hidden && (
                   <Sidebar.Navlink key={id}  active={active(path)} exact to={path}><Icon /> {title}</Sidebar.Navlink>
                 )
               })

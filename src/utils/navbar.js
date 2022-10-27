@@ -1,5 +1,6 @@
 import { HomeComponents } from "../Components/Home";
 import { MyAccount } from "../Components/MyAccount";
+import { Params } from "../Components/Params";
 import { Shop } from "../pages/Shop";
 
 export const navbar = [
@@ -22,9 +23,17 @@ export const navbar = [
     {
         id: 3,
         title: "My Profile",
-        path: '/myprofile',
+        path: '/myprofile/account-details',
         element: <MyAccount />,
         isPrivate: true,
         hidden: true
+    },
+    {
+        id: 4,
+        title: "",
+        path: '/shop/:id',
+        element: <Params />,
+        isPrivate: true,
+        hidden: true,
     },
 ]

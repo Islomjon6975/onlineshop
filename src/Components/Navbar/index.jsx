@@ -60,7 +60,7 @@ export const Navbar = () => {
                             JSON.parse(localStorage.getItem('register')).role === 'seller'
                             ?
                             (<Wrapper.ButtonWrapper>
-                                <User onClick={() => navigate('/myprofile')}>
+                                <User onClick={() => navigate('/myprofile/accountdetails')}>
                                     <User.Icon />
                                 </User>
                             </Wrapper.ButtonWrapper>)

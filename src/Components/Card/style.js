@@ -209,4 +209,16 @@ Container.OriginalPrice = styled.span`
                         supported by Chrome, Opera and Firefox */
 `
 
+Container.ViewAll = styled.div`
+    background: none;
+    border: none;
+    margin-top: 5px;
+    border: 1px solid #777;
+    text-align: center;
+    active: {
+        transform: scale(0.98);
+    }
+`
+
+
 export {Container}

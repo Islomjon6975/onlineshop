@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {ReactComponent as logout} from '../../assets/icons/myprofile-logout.svg'
 
 const Container = styled.div`
+    position: relative;
     width: 100%;
     display: grid;
     grid-template-columns: 310px 1fr;
@@ -11,8 +12,33 @@ const Container = styled.div`
     margin-bottom: 150px;
 `
 
+Container.Add = styled.div`
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 10;
+    width: 100px;
+    height: 35px;
+    border: 1px solid #46A358;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #46A358;
+    transition: transform .4s ease-in-out;
+
+    :active {
+        transform: scale(0.97);
+    }
+`
+
 const Sidebar = styled.div`
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background: #FBFBFB;
 `
 
@@ -72,7 +98,7 @@ Sidebar.Logout.Icon = styled(logout)``
 
 const OutletWrapper = styled.div`
     /* background-color: crimson; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
 `
 
 export {Container, Sidebar, OutletWrapper}

@@ -8,18 +8,26 @@ import flower2 from '../../../assets/images/flower2.png'
 import flower3 from '../../../assets/images/flower3.png'
 import flower4 from '../../../assets/images/flower4.png'
 import { Button } from '../../Generic/Button';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useProducts } from '../../../context/Products';
 
 
 export const ProductDetails = () => {
+    const [state, dispatch] = useProducts()
+    const navigate = useNavigate()
 
     var imgSet = [flower1, flower2, flower3, flower4];
     const [showImg, setShowImg] = useState(3);
 
+    const param = useParams();
+    const selectedProduct = state.data.filter((value) => value.id === +     param.id.replace(':', ''))[0]
+    console.log(selectedProduct)
+
   return (
     <Container>
         <Breadcrumb>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>Shop</Breadcrumb.Item>
+            <Breadcrumb.Item onClick={() => navigate('/home')}>Home</Breadcrumb.Item>
+            <Breadcrumb.Item onClick={() => navigate('/shop')}>Shop</Breadcrumb.Item>
         </Breadcrumb>
 
         <Wrapper>
@@ -48,9 +56,9 @@ export const ProductDetails = () => {
 
             {/* Product Details */}
             <Right>
-                <Right.Title>Barberton Daisy</Right.Title>
+                <Right.Title>{selectedProduct?.title}</Right.Title>
                 <Right.Wrapper>
-                    <Right.Price>$119.00</Right.Price>
+                    <Right.Price>${selectedProduct?.price}.00</Right.Price>
                     <Right.Reviews>
                         <Right.ReviewsWrapper>
                             <Right.StarGold />

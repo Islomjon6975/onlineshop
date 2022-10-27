@@ -3,20 +3,23 @@ import {ReactComponent as bag} from '../assets/icons/myprofile-bag.svg'
 import {ReactComponent as location} from '../assets/icons/myprofile-location.svg'
 import {ReactComponent as heart} from '../assets/icons/myprofile-heart.svg'
 import { AccountDetails } from '../Components/MyAccount/AccountDetails'
+import { AddNew } from '../Components/MyAccount/AddNew'
+import { Wishlist } from '../Components/MyAccount/Wishlist'
+import { MyProducts } from '../Components/MyAccount/MyProducts'
 
 export const myprofile = [
     {
         id: 1,
         title: 'Account Details',
-        path: '/myprofile/account-details',
-        element: <AccountDetails />,
+        path: '/myprofile/accountdetails',
+        element:<AccountDetails />,
         icon: user
     },
     {
         id: 2,
         title: 'My Products',
         path: '/myprofile/myproducts',
-        element: <h1>My Products</h1>,
+        element: <MyProducts />,
         icon: bag
     },
     {
@@ -30,7 +33,15 @@ export const myprofile = [
         id: 4,
         title: 'Wishlist',
         path: '/myprofile/wishlist',
-        element: <h1>Wishlist</h1>,
+        element: <Wishlist />,
         icon: heart
     },
+    {
+        id: 4,
+        title: '',
+        path: '/myprofile/addNew',
+        element: <AddNew />,
+        icon: heart,
+        hidden: true,
+    }
 ]

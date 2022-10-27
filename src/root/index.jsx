@@ -26,13 +26,14 @@ export const Root = () => {
                     isPrivate && <Route exact key={id} path={path} element={token && element } />
                   )
               })}
+              <Route element={<MyAccount />}>
+                {myprofile.map(({ id, path, element }) => {
+                  return  (
+                    <Route key={id} path={path} element={element} />
+                )})}
             </Route>
-            <Route element={<MyAccount />}>
-              {myprofile.map(({ id, path, element }) => {
-                return  (
-                  <Route key={id} path={path} element={element} />
-              )})}
             </Route>
+            
           </Routes>
           <Footer />
       </Container>

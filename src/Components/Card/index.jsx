@@ -3,6 +3,7 @@ import { Container } from './style'
 import flower1 from '../../assets/images/flower1.png'
 import { useProducts } from '../../context/Products'
 import { message, notification } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 export const Card = ({
     id,
@@ -13,11 +14,13 @@ export const Card = ({
     discount,
     like,
     quantity,
-    addtocart
+    addtocart,
+    onClick,
 }) => {
     const [change, setChange] = useState(false)
     const [state, dispatch] = useProducts()
     const token = JSON.parse(localStorage.getItem('greenshopToken'))
+    const navigate = useNavigate()
 
 
     const success = (title ) => {
@@ -29,7 +32,7 @@ export const Card = ({
     };
 
   return (
-    <Container  onMouseOver = {() => setChange(true)} onMouseLeave = {() => setChange(false)}>
+    <Container onClick={onClick}  onMouseOver = {() => setChange(true)} onMouseLeave = {() => setChange(false)}>
       
         <Container.ImageWrapper> 
           <Container.Blur blur={addtocart}>
@@ -45,7 +48,7 @@ export const Card = ({
                         like ? <Container.Icons.RedHeart onClick={() => dispatch({type: 'redHeart', payload: {id: id}})} /> : <Container.Icons.Heart onClick={() => dispatch({type: 'heart', payload: {id: id}})} />
                     }
                 </Container.Icons.Wrapper> 
-                <Container.Icons.Wrapper><Container.Icons.Search /></Container.Icons.Wrapper>
+                <Container.Icons.Wrapper onClick={() => localStorage.getItem('greenshopToken') ? navigate(`/shop/:${id}`) : dispatch({type: 'openModal'})}><Container.Icons.Search /></Container.Icons.Wrapper>
             </Container.Icons>
         </Container.ImageWrapper>
         <Container.Title>{title}</Container.Title>
