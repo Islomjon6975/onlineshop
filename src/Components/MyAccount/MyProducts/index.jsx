@@ -1,9 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useProducts } from '../../../context/Products'
 import { Container, Wrapper } from './style'
 
 export const MyProducts = () => {
     const [state, dispatch] = useProducts()
+    const navigate = useNavigate()
   return (
     <Container>
         <Wrapper>
@@ -33,8 +35,8 @@ export const MyProducts = () => {
                                 <Wrapper.Product.Item>{value?.view}</Wrapper.Product.Item>
                                 <Wrapper.Product.Item>
                                     <Wrapper.Actions>
-                                        <Wrapper.Edit/>
-                                        <Wrapper.Trash/>
+                                        <Wrapper.Edit onClick={() => {dispatch({type: "edit", payload: {id: value?.id}}); navigate(`/myprofile/myproducts/:${value?.id}`)} }/>
+                                        <Wrapper.Trash onClick={() => dispatch({type: "trash", payload: {id: value?.id}})} />
                                     </Wrapper.Actions>
                                 </Wrapper.Product.Item>
                             </Wrapper.Product>

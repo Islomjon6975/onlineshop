@@ -7,8 +7,9 @@ export const Wishlist = () => {
     const [state, dispatch] = useProducts();
   return (
     <Container>
-        {
-            state.favourites.map((value) => {
+        {   state.favourites.length >= 1
+            ?
+            (state.favourites.map((value) => {
                 return (
                     <Card
                         key={value?.id}
@@ -23,7 +24,9 @@ export const Wishlist = () => {
                         addtocart={value?.addtocart}
                     />
                 )
-            })
+            })) 
+            : 
+            <h3>No Wishlist.</h3>
         }
     </Container>
   )

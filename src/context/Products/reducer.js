@@ -1,6 +1,7 @@
 import { data } from "../../utils/data";
 
 export const reducer = (state, action) => {
+    
     switch(action.type) {
             case 'heart': 
                 let favouritesOne = null;
@@ -117,7 +118,23 @@ export const reducer = (state, action) => {
 
             case 'closeHumburger':
                 return {...state, humburger: false}
+            
+            case 'trash':
+                const remove = state.data.filter((value) => value.id !== action.payload.id)
+                return {...state, data: remove}
 
+            case 'edit':
+                return {...state, edit: action.payload.id}
+
+            case 'update': 
+                const update = state.data.map((value) => {
+                    if(value.id === action.payload.id) {
+                        return action.payload.updated
+                    } else {
+                        return value
+                    }
+                })
+                return {...state, data: update}
             default: return {...state, data: state.data}
         }
 }

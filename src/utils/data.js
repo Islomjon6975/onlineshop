@@ -20,6 +20,7 @@ export const data = [
         publishDate: '30 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     },
     {
         id: 2,
@@ -34,6 +35,7 @@ export const data = [
         publishDate: '30 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     },
     {
         id: 3,
@@ -48,6 +50,7 @@ export const data = [
         publishDate: '30 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     },
     {
         id: 4,
@@ -62,6 +65,7 @@ export const data = [
         publishDate: '31 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     },
     {
         id: 5,
@@ -76,6 +80,7 @@ export const data = [
         publishDate: '30 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     },
     {
         id: 6,
@@ -90,6 +95,7 @@ export const data = [
         publishDate: '30 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     },
     {
         id: 7,
@@ -104,6 +110,7 @@ export const data = [
         publishDate: '30 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     },
     {
         id: 8,
@@ -118,6 +125,7 @@ export const data = [
         publishDate: '30 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     },
     {
         id: 9,
@@ -132,6 +140,7 @@ export const data = [
         publishDate: '11 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     },
     {
         id: 10,
@@ -146,6 +155,7 @@ export const data = [
         publishDate: '21 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     },
     {
         id: 11,
@@ -160,6 +170,7 @@ export const data = [
         publishDate: '30 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     },
     {
         id: 12,
@@ -174,6 +185,7 @@ export const data = [
         publishDate: '30 december 2022',
         view: 1,
         addtocart:false,
+        description: 'This is a flower which is very beautiful'
     }
 ]
 

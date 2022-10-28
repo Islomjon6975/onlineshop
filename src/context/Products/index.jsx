@@ -15,7 +15,8 @@ const ProductsContext = ({children}) => {
         basket: false,
         totalPrice: 0,
         modal: false,
-        humburger: false
+        humburger: false,
+        edit: null,
     })
 
     localStorage.setItem('state', JSON.stringify(state))

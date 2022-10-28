@@ -6,6 +6,7 @@ import { AccountDetails } from '../Components/MyAccount/AccountDetails'
 import { AddNew } from '../Components/MyAccount/AddNew'
 import { Wishlist } from '../Components/MyAccount/Wishlist'
 import { MyProducts } from '../Components/MyAccount/MyProducts'
+import { Update } from '../Components/MyAccount/Update'
 
 export const myprofile = [
     {
@@ -41,6 +42,14 @@ export const myprofile = [
         title: '',
         path: '/myprofile/addNew',
         element: <AddNew />,
+        icon: heart,
+        hidden: true,
+    },
+    {
+        id: 5,
+        title: '',
+        path: '/myprofile/myproducts/:id',
+        element: <Update />,
         icon: heart,
         hidden: true,
     }
