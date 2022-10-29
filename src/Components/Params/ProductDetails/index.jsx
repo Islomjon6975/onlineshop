@@ -20,8 +20,7 @@ export const ProductDetails = () => {
     const [showImg, setShowImg] = useState(3);
 
     const param = useParams();
-    const selectedProduct = state.data.filter((value) => value.id === +     param.id.replace(':', ''))[0]
-    console.log(selectedProduct)
+    const selectedProduct = state.data.filter((value) => value.id === +param.id.replace(':', ''))[0]
 
   return (
     <Container>
@@ -96,19 +95,25 @@ export const ProductDetails = () => {
                     
                 <Right.Buttons>
                     <Right.IncDesWrapper>
-                        <Right.IncDec>
+                        <Right.IncDec  onClick={() => dispatch({type: 'decrement', payload: {id: selectedProduct?.id}})}>
                             <Right.Minus />
                         </Right.IncDec>
-                        <Right.Counter>1</Right.Counter>
-                        <Right.IncDec>
+                        <Right.Counter>{state.data.filter((value) => value.id === +param.id.replace(':', ''))[0].quantity}</Right.Counter>
+                        <Right.IncDec   onClick={() => dispatch({type: 'increment', payload: {id: selectedProduct?.id}})}>
                             <Right.Plus />
                         </Right.IncDec>
                     </Right.IncDesWrapper>
                     <Right.Buttons.Wrapper>
                         <Button width='130px' height='40px'>Buy Now</Button>
-                        <Button width='130px' height='40px'>Add to cart</Button>
+                        {
+                            !selectedProduct?.addtocart ? <Button width='130px' height='40px' onClick={() => dispatch({type: 'addtocart', payload: {id: selectedProduct.id}})}>Add to cart</Button> : <Button width='130px' height='40px' onClick={() => dispatch({type: 'cancelcart', payload: {id: selectedProduct.id}})}>Remove</Button> 
+                        }
+                        
                         <Right.LikeWrapper>
-                            <Right.HeartGreen />
+                            {
+                                !selectedProduct.like ? <Right.HeartGreen onClick={() => dispatch({type: 'heart', payload: {id: selectedProduct.id}})} /> : <Right.RedHeart onClick={() => dispatch({type: 'redHeart', payload: {id: selectedProduct.id}})} />
+                            }
+                            
                         </Right.LikeWrapper>
                     </Right.Buttons.Wrapper>
                 </Right.Buttons>

@@ -5,6 +5,7 @@ import {ReactComponent as stargrey} from '../../../assets/icons/star-grey.svg'
 import {ReactComponent as plus} from '../../../assets/icons/plus.svg' 
 import {ReactComponent as minus} from '../../../assets/icons/minus.svg' 
 import {ReactComponent as heartgreen} from '../../../assets/icons/heart-green.svg' 
+import {ReactComponent as redHeart} from '../../../assets/icons/red-heart.svg'
 
 const common = css`
     -webkit-touch-callout: none; // iOS Safari
@@ -359,6 +360,12 @@ Right.LikeWrapper = styled.div`
 Right.HeartGreen = styled(heartgreen)`
 
 `
+
+Right.RedHeart = styled(redHeart)`
+    width: 30px;
+    height: 30px;
+`
+
 
 Right.Contents = styled.div`
     ${common}

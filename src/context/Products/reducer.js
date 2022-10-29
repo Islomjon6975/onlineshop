@@ -54,17 +54,15 @@ export const reducer = (state, action) => {
             
             case 'addtocart':
                 let selectedCart = null
-                let totalPriceAddtocart = state.totalPrice
                 let res = state.data.map((value) => {
                     if(value.id === action.payload.id) {
-                        totalPriceAddtocart += value.price * value.quantity
                         selectedCart = {...value, addtocart: true}
                         return {...value, addtocart: true}
                     } else {
                         return value
                     }
                 })
-                return {...state, data: res, cart: [...state.cart, selectedCart], totalPrice: totalPriceAddtocart}
+                return {...state, data: res, cart: [...state.cart, selectedCart]}
             
             case 'cancelcart': 
                 let cancelcart = state.cart.filter((value) => {
@@ -82,8 +80,11 @@ export const reducer = (state, action) => {
                 return {...state, cart: cancelcart, data: canceladdtocart}
 
             case 'increment': 
+                let totalIncrementPrice = state.totalPrice
+
                 let increment = state.cart.map((value) => {
                     if(value.id === action.payload.id) {
+                        totalIncrementPrice += value.price
                         return {...value, quantity: value.quantity + 1}
                     }
                     else {
@@ -92,7 +93,7 @@ export const reducer = (state, action) => {
                 })
                 
 
-                return {...state, cart: increment}
+                return {...state, cart: increment, totalPrice: totalIncrementPrice}
 
             case 'decrement': 
                 // let totalPriceDecrement = state.totalPrice
@@ -107,7 +108,7 @@ export const reducer = (state, action) => {
                 })
 
                 return {...state, cart: decrement}
-
+            
             case 'openModal':
                 return {...state, modal: true}
 

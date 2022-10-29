@@ -39,12 +39,12 @@ export const Navbar = () => {
                     <Wrapper.Ul>
                         {navbar.map((item) => {
                                 return(
-                                    !item.isPrivate  && <Wrapper.Li active={active(item.path)} exact key={item.id} to={item.path}>{item.title}</Wrapper.Li>
+                                    !item.isPrivate  && <Wrapper.Li active={active(item.path)} key={item.id} to={item.path}>{item.title}</Wrapper.Li>
                                 )
                         })}
                         {navbar.map((item) => {
                                 return(
-                                item.isPrivate && !item.hidden &&   <Wrapper.Li  active={active(item.path)} onClick={!token ? ()=> dispatch({type: 'openModal'}) : 'none'}  exact key={item.id} to={token && item.path}>{item.title}</Wrapper.Li>
+                                item.isPrivate && !item.hidden &&   <Wrapper.Li  active={active(item.path)} onClick={!token ? ()=> dispatch({type: 'openModal'}) : 'none'}  key={item.id} to={token && item.path}>{item.title}</Wrapper.Li>
                                 )
                         })}
                     </Wrapper.Ul>

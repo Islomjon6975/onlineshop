@@ -27,7 +27,7 @@ export const myprofile = [
         id: 3,
         title: 'Address',
         path: '/myprofile/address',
-        element: <h1>Address</h1>,
+        element: <h3>Address</h3>,
         icon: location
     },
     {
