@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Container } from './style'
 import flower1 from '../../assets/images/flower1.png'
 import { useProducts } from '../../context/Products'
-import { message, notification } from 'antd';
+import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 export const Card = ({
@@ -21,8 +21,6 @@ export const Card = ({
     const [state, dispatch] = useProducts()
     const token = JSON.parse(localStorage.getItem('greenshopToken'))
     const navigate = useNavigate()
-
-
     const success = (title ) => {
       message.success(`${title} has been added to Cart`);
     };

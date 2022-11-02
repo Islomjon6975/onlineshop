@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Container, Footer, Product, Products, Wrapper } from './style';
-import flower1 from '../../assets/images/flower1.png'
 import { useProducts } from '../../context/Products';
 import { Button } from '../Generic/Button';
 import { message } from 'antd';
