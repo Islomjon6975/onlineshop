@@ -1,5 +1,4 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useProducts } from '../../context/Products'
 import { Card } from '../Card'
 import { Container, Title, Wrapper } from './style'

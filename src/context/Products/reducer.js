@@ -65,11 +65,7 @@ export const reducer = (state, action) => {
                 return {...state, data: res, cart: [...state.cart, selectedCart]}
             
             case 'cancelcart': 
-                let cancelcart = state.cart.filter((value) => {
-                    if(value.id !== action.payload.id) {
-                        return value
-                    }
-                })
+                let cancelcart = state.cart.filter((value) => value.id !== action.payload.id && value)
                 let canceladdtocart = state.data.map((value) => {
                     if(value.id === action.payload.id) {
                         return {...value, addtocart: false}

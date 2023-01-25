@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from '../../Generic/Button'
 import { Container } from './style'
-import { message } from 'antd';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useProducts } from '../../../context/Products';
 

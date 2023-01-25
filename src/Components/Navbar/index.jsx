@@ -7,7 +7,6 @@ import { Basket, Container, Greenshop, Logo, Logout, Search, Wrapper, Hamburger,
 import {useNavigate} from 'react-router-dom'
 import {Outlet} from 'react-router-dom'
 import { Login } from '../Login';
-import { useRegister } from '../../context/RegistrationContext';
 const active = (url) => {
     return window.location.pathname.includes(url)
 }
