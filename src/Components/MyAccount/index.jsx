@@ -1,7 +1,6 @@
 import React from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { myprofile } from '../../utils/myprofile'
-import { AddNew } from './AddNew'
 import { Container, OutletWrapper, Sidebar } from './style'
 import { message, Popconfirm } from 'antd';
 

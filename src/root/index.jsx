@@ -4,13 +4,11 @@ import { Navbar } from '../Components/Navbar'
 import { Container } from './style'
 import {Routes, Route, Navigate} from 'react-router-dom'
 import { navbar } from '../utils/navbar'
-import { useProducts } from '../context/Products'
 import { myprofile } from '../utils/myprofile'
 import { MyAccount } from '../Components/MyAccount'
 
 export const Root = () => {
   const token = JSON.parse(localStorage.getItem('greenshopToken'))
-  const [state, dispatch] = useProducts()
   return (
       <Container>
           <Routes>

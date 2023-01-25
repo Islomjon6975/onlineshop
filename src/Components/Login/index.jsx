@@ -11,7 +11,7 @@ import { useRegister } from '../../context/RegistrationContext'
 export const Login = () => {
     const [color, setColor] = useState('login')
     const [state, dispatch] = useProducts()
-    const [register, setRegistration] = useRegister()
+    const [register, ] = useRegister()
     const [signIn, setSignIn] = useState({
         email: '',
         password: ''
@@ -28,9 +28,9 @@ export const Login = () => {
         setSignIn({email: '', password: ''})
     }
 
-    const [open, setOpen] = useState(false);
+    const [, setOpen] = useState(false);
     const [confirmLoading, setConfirmLoading] = useState(false);
-    const [modalText, setModalText] = useState('Content of the modal');
+    const [, setModalText] = useState('Content of the modal');
 
     const handleOk = () => {
         setModalText('The modal will be closed after two seconds');

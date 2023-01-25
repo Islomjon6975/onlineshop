@@ -13,7 +13,6 @@ const active = (url) => {
 }
 export const Navbar = () => {
     const [state, dispatch] = useProducts()
-    const [registration, setRegistration] = useRegister()
     const navigate = useNavigate()
     const token = JSON.parse(localStorage.getItem('greenshopToken'))
 

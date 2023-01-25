@@ -5,7 +5,6 @@ import superSale from '../../../assets/images/super-sale.png'
 import { Card } from '../../Card'
 import { useProducts } from '../../../context/Products'
 import { Pagination } from 'antd'
-import { useNavigate } from 'react-router-dom'
 
 export const Products = () => {
   const [change, setChange] = useState({min: 0, max: 1500, categories: 'House Plants', size: 'Small', navlink: 'All Plants'})

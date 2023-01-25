@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react'
 import { useRegister } from '../../../context/RegistrationContext'
 import { Button } from '../../Generic/Button'
-import { Container, ImagePicker, Input, Label, Select } from './style'
+import { Container, Input, Label, Select } from './style'
 
 export const AccountDetails = () => {
-    const [registration, setRegistration] = useRegister();
+    const [registration, ] = useRegister();
     const [profileInfo, setProfileInfo] = useState({
         firstName: '',
         lastName: '',

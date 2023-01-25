@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Menu, Slider } from 'antd';
+import { Slider } from 'antd';
 import {ReactComponent as settings} from '../../../assets/icons/settings.svg'
 
 const Container = styled.div`

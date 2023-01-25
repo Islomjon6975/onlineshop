@@ -2,11 +2,10 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useProducts } from '../../context/Products'
 import { Card } from '../Card'
-import { Container, Product, Title, Wrapper } from './style'
+import { Container, Title, Wrapper } from './style'
 
 export const ShopComponent = () => {
-    const [state, dispatch] = useProducts()
-    const navigate = useNavigate()
+    const [state] = useProducts()
   return (
     <Container>
         <Title>Products</Title>

@@ -18,7 +18,7 @@ export const Card = ({
     onClick,
 }) => {
     const [change, setChange] = useState(false)
-    const [state, dispatch] = useProducts()
+    const [, dispatch] = useProducts()
     const token = JSON.parse(localStorage.getItem('greenshopToken'))
     const navigate = useNavigate()
     const success = (title ) => {

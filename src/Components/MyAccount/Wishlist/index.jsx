@@ -4,7 +4,7 @@ import { Card } from '../../Card'
 import { Container } from './style'
 
 export const Wishlist = () => {
-    const [state, dispatch] = useProducts();
+    const [state] = useProducts();
   return (
     <Container>
         {   state.favourites.length >= 1

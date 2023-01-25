@@ -6,7 +6,7 @@ import { message } from 'antd';
 import { useRegister } from '../../context/RegistrationContext'
 export const Register = () => {
     // const [color, setColor] = useState('login')
-    const [registration, setRegistration] = useRegister()
+    const [, setRegistration] = useRegister()
     const [signUp, setSignUp] = useState({
         firstName: '',
         lastName: '',
