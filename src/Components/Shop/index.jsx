@@ -30,13 +30,3 @@ export const ShopComponent = () => {
     </Container>
   )
 }
-
-{/* <Product>
-                        <Product.ImageWrapper>
-                            <Product.Image src={item.img} />
-                        </Product.ImageWrapper>
-                        <Product.Details>
-                            <Product.Title>{item.title}</Product.Title>
-                            <Product.Price>${item.price}.00</Product.Price>
-                        </Product.Details>
-                    </Product> */}
